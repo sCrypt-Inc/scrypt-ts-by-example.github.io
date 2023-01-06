@@ -1,0 +1,182 @@
+import React from "react"
+import SEO from "../components/SEO"
+import styles from "./index.module.css"
+import youTube from "../components/youtube.png"
+
+
+interface Route {
+  path: string
+  title: string
+}
+
+const SOL_ROUTES: Route[] = [
+  {
+    path: "hello-world",
+    title: "Hello World",
+  },
+  {
+    path: "constructor",
+    title: "Constructor",
+  },
+  {
+    path: "properties",
+    title: "Properties",
+  },
+  {
+    path: "methods",
+    title: "Methods",
+  },
+  {
+    path: "basic-types",
+    title: "Basic Types",
+  },
+  {
+    path: "array-types",
+    title: "Array Types",
+  },
+  {
+    path: "user-defined-types",
+    title: "User-defined Types",
+  },
+  {
+    path: "domain-types",
+    title: "Domain Types",
+  },
+  {
+    path: "variable-declarations",
+    title: "Variable Declarations",
+  },
+  {
+    path: "for-loop",
+    title: "For-loop",
+  },
+  {
+    path: "return",
+    title: "Return Statement",
+  },
+  {
+    path: "functions",
+    title: "Functions",
+  },
+  {
+    path: "operators",
+    title: "Operators",
+  },
+  {
+    path: "script-context",
+    title: "ScriptContext",
+  },
+]
+
+const APP_ROUTES: Route[] = [
+  {
+    path: "p2pkh",
+    title: "Pay to Public Key Hash (P2PKH)",
+  },
+  {
+    path: "hash-puzzle",
+    title: "Hash Puzzle",
+  },
+]
+
+const HACK_ROUTES: Route[] = []
+
+const DEFI_ROUTES = []
+
+export const ROUTES_BY_CATEGORY = [
+  {
+    title: "",
+    routes: SOL_ROUTES,
+  },
+  {
+    title: "Applications",
+    routes: APP_ROUTES,
+    //routes: APP_ROUTES.map((route) => ({
+    //  ...route,
+    //  path: `/app/${route.path}`,
+    //})),
+  },
+  //{
+  //  title: "Hacks",
+  //  routes: HACK_ROUTES.map((route) => ({
+  //    ...route,
+  //    path: `/hacks/${route.path}`,
+  //  })),
+  //},
+  //{
+  //  title: "DeFi",
+  //  routes: DEFI_ROUTES.map((route) => ({
+  //    ...route,
+  //    path: `/defi/${route.path}`,
+  //  })),
+  //},
+]
+
+const UPDATES = [
+  "",
+]
+
+const ROUTES = ROUTES_BY_CATEGORY.map(({ routes }) => routes).flat()
+const ROUTE_INDEX_BY_PATH = ROUTES.reduce((map, route: Route, i) => {
+  // @ts-ignore
+  map[route.path] = i
+  return map
+}, {})
+
+export function getPrevNextPaths(path: string): {
+  prev: Route | null
+  next: Route | null
+} {
+  // @ts-ignore
+  const index = ROUTE_INDEX_BY_PATH[path]
+  if (index >= 0) {
+    const prev = ROUTES[index - 1] || null
+    const next = ROUTES[index + 1] || null
+    return { prev, next }
+  }
+  return {
+    prev: null,
+    next: null,
+  }
+}
+
+export default function HomePage() {
+  return (
+    <div className={styles.component}>
+      <SEO
+        title="scryptTS by Example"
+        description="Learn smart contract programming using scryptTS"
+      />
+      <h1 className={styles.header}>
+        <a href="/">scryptTS by Example</a>
+      </h1>
+      <div className={styles.subHeader}></div>
+      <div className={styles.main}>
+        <p>
+          An introduction to <a href="https://scrypt.io/scrypt-ts/overview/">scryptTS</a> with
+          simple examples.
+        </p>
+
+        <div className={styles.updates}>
+          {UPDATES.map((text, i) => (
+            <div key={i}>{text}</div>
+          ))}
+        </div>
+
+        {ROUTES_BY_CATEGORY.map(({ routes, title }, i) => (
+          <div key={i}>
+            {title && <h3 className={styles.category}>{title}</h3>}
+
+            <ul className={styles.list}>
+              {routes.map(({ path, title }) => (
+                <li className={styles.listItem} key={path}>
+                  <a href={path}>{title}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
