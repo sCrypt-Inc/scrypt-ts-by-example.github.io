@@ -22,7 +22,7 @@ const html = `<p>Like properties, a smart contract can also have two kinds of me
   }
 </code></pre>
 <h3 id="non-public-methods">Non-Public <code>@method</code>s</h3>
-<p>Without a <code>public</code> modifier, a <code>@method</code> is an internal method and can only be called within the contract class. </p>
+<p>Without a <code>public</code> modifier, a <code>@method</code> is an internal method and can only be called within the contract class.</p>
 <p>It can return any valid types described later. The return type must be explicitly declared. e.g.,</p>
 <pre><code class="language-js">  @<span class="hljs-title function_">method</span>()
   <span class="hljs-title function_">add</span>(<span class="hljs-attr">x0</span>: bigint, <span class="hljs-attr">x1</span>:bigint) : bigint {

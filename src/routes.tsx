@@ -1,8 +1,10 @@
 import component_array_types from "./pages/array-types"
 import component_auction from "./pages/auction"
 import component_basic_types from "./pages/basic-types"
+import component_coin_toss from "./pages/coin-toss"
 import component_constructor from "./pages/constructor"
 import component_domain_types from "./pages/domain-types"
+import component_ecdsa_oracle from "./pages/ecdsa-oracle"
 import component_for_loop from "./pages/for-loop"
 import component_functions from "./pages/functions"
 import component_hash_puzzle from "./pages/hash-puzzle"
@@ -11,8 +13,10 @@ import component_methods from "./pages/methods"
 import component_operators from "./pages/operators"
 import component_p2pkh from "./pages/p2pkh"
 import component_properties from "./pages/properties"
+import component_rabin_signature from "./pages/rabin-signature"
 import component_return from "./pages/return"
 import component_script_context from "./pages/script-context"
+import component_tic_tac_toe from "./pages/tic-tac-toe"
 import component_user_defined_types from "./pages/user-defined-types"
 import component_variable_declarations from "./pages/variable-declarations"
 import component_ from "./pages"
@@ -47,12 +51,20 @@ const routes: Route[] = [
         component: component_basic_types
     },
     {
+        path: "/coin-toss",
+        component: component_coin_toss
+    },
+    {
         path: "/constructor",
         component: component_constructor
     },
     {
         path: "/domain-types",
         component: component_domain_types
+    },
+    {
+        path: "/ecdsa-oracle",
+        component: component_ecdsa_oracle
     },
     {
         path: "/for-loop",
@@ -87,12 +99,20 @@ const routes: Route[] = [
         component: component_properties
     },
     {
+        path: "/rabin-signature",
+        component: component_rabin_signature
+    },
+    {
         path: "/return",
         component: component_return
     },
     {
         path: "/script-context",
         component: component_script_context
+    },
+    {
+        path: "/tic-tac-toe",
+        component: component_tic_tac_toe
     },
     {
         path: "/user-defined-types",

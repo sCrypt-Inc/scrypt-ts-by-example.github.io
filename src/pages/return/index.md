@@ -4,7 +4,7 @@ version: 0.1.0
 description: Return statement in scryptTS
 ---
 
-Due to the lack of native return semantics support in Bitcoin Script, a function currently must end with a `return` statement and it is the only valid place for a `return` statement. This requirement may be relaxed in the future. 
+Due to the lack of native return semantics support in Bitcoin Script, a function currently must end with a `return` statement and it is the only valid place for a `return` statement. This requirement may be relaxed in the future.
 
 ```ts
 @method() m(x: bigint): bigint {
@@ -14,6 +14,7 @@ Due to the lack of native return semantics support in Bitcoin Script, a function
 ```
 
 This is usually not a problem since it can be circumvented as follows:
+
 ```ts
 @method()
 abs(a: bigint): bigint {
@@ -24,7 +25,9 @@ abs(a: bigint): bigint {
     }
 }
 ```
+
 can be rewritten as
+
 ```ts
 @method()
 abs(a: bigint): bigint {

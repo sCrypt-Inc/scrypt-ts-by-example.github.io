@@ -3,7 +3,6 @@ import SEO from "../components/SEO"
 import styles from "./index.module.css"
 import youTube from "../components/youtube.png"
 
-
 interface Route {
   path: string
   title: string
@@ -77,6 +76,22 @@ const APP_ROUTES: Route[] = [
     path: "hash-puzzle",
     title: "Hash Puzzle",
   },
+  {
+    path: "rabin-signature",
+    title: "Rabin Signature",
+  },
+  {
+    path: "coin-toss",
+    title: "Coin Toss",
+  },
+  {
+    path: "ecdsa-oracle",
+    title: "ECDSA-based Oracle",
+  },
+  {
+    path: "tic-tac-toe",
+    title: "Tic-Tac-Toe",
+  },
 ]
 
 const HACK_ROUTES: Route[] = []
@@ -112,9 +127,7 @@ export const ROUTES_BY_CATEGORY = [
   //},
 ]
 
-const UPDATES = [
-  "",
-]
+const UPDATES = [""]
 
 const ROUTES = ROUTES_BY_CATEGORY.map(({ routes }) => routes).flat()
 const ROUTE_INDEX_BY_PATH = ROUTES.reduce((map, route: Route, i) => {
@@ -153,8 +166,9 @@ export default function HomePage() {
       <div className={styles.subHeader}></div>
       <div className={styles.main}>
         <p>
-          An introduction to <a href="https://scrypt.io/scrypt-ts/overview/">scryptTS</a> with
-          simple examples.
+          An introduction to{" "}
+          <a href="https://scrypt.io/scrypt-ts/overview/">scryptTS</a> with simple
+          examples.
         </p>
 
         <div className={styles.updates}>

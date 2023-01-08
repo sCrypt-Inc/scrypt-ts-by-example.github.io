@@ -6,7 +6,7 @@ export const replitLink = ""
 
 const html = `<h3 id="built-in-functions">Built-in Functions</h3>
 <h4 id="assert"><code>assert</code></h4>
-<p>The most commonly used built-in function is <code>assert(cond: boolean)</code>. It throws an  error if <code>cond</code> is false. A contract call is successful if and only if all arguments passed to the <code>assert</code> functions are true.</p>
+<p>The most commonly used built-in function is <code>assert(cond: boolean)</code>. It throws an error if <code>cond</code> is false. A contract call is successful if and only if all arguments passed to the <code>assert</code> functions are true.</p>
 <h3 id="whitelisted-functions">Whitelisted Functions</h3>
 <p>Be default, all Javascript/TypeScript built-in functions/global variables are not allowed in <code>@method</code>s, except the following kinds.</p>
 <h4 id="consolelog"><code>console.log</code></h4>

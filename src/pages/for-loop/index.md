@@ -13,7 +13,8 @@ for(let $i = 0; $i < $maxLoopCount; $i++) {
 ```
 
 Note:
-* the initial value must be `0`, the operator `<` (no `<=`), and increment `$i++` (no pre-increment `++$i`).
-* `$maxLoopCount` must be a [CTC](#compile-time-constant).
-* `$i` can be arbitrary name, e.g., `i`, `j`, or `k`.
-* `break` and `continue` are currently not allowed.
+
+- the initial value must be `0`, the operator `<` (no `<=`), and increment `$i++` (no pre-increment `++$i`).
+- `$maxLoopCount` must be a [CTC](#compile-time-constant).
+- `$i` can be arbitrary name, e.g., `i`, `j`, or `k`.
+- `break` and `continue` are currently not allowed.

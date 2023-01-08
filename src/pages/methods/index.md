@@ -29,7 +29,7 @@ A public method can be called from an external transaction. The call succeeds if
 
 ### Non-Public `@method`s
 
-Without a `public` modifier, a `@method` is an internal method and can only be called within the contract class. 
+Without a `public` modifier, a `@method` is an internal method and can only be called within the contract class.
 
 It can return any valid types described later. The return type must be explicitly declared. e.g.,
 
@@ -39,6 +39,5 @@ It can return any valid types described later. The return type must be explicitl
     return x0 + x1;
   }
 ```
-
 
 Note: Recursion is disallowed. Both **Non-Public Methods** and **Public Methods** cannot call themselves in their body, either directly or indirectly.

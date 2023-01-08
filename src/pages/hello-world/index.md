@@ -9,20 +9,18 @@ It exposes a single public method `equals`, which checks if the passed parameter
 In a Bitcoin context this means, that we need to include an integer `y` in the unlocking script, that unlocks the output containing our smart contract (which stores `x`).
 
 ```typescript
-export class Demo extends SmartContract {
+class Demo extends SmartContract {
+  @prop()
+  x: bigint
 
-    @prop()
-    x: bigint;
+  constructor(x: bigint) {
+    super(x)
+    this.x = x
+  }
 
-    constructor(x: bigint) {
-        super(x);
-        this.x = x;
-    }
-
-    @method()
-    public equals(y: bigint) {
-        assert(this.x == y);
-    }
-
+  @method()
+  public equals(y: bigint) {
+    assert(this.x == y)
+  }
 }
 ```

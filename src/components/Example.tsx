@@ -58,11 +58,9 @@ const Example: React.FC<Props> = ({
           )}
         </div>
 
+        {replitLink && <h3>Try on Replit</h3>}
         {replitLink && (
-          <h3>Try on Replit</h3>
-        )}
-        {replitLink && (
-          <iframe frameBorder="0" width="100%" height="500px" src={replitLink} ></iframe>
+          <iframe frameBorder="0" width="100%" height="500px" src={replitLink}></iframe>
         )}
       </div>
     </div>

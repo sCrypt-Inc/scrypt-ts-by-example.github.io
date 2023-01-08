@@ -13,13 +13,13 @@ const html = `<p>The most basic types allowed are: <code>boolean</code> / <code>
 <li><code>utf8ToByteString(input: string)</code>: return a value in hex bytes format representing the utf8 encoding of <code>input</code>.</li>
 </ul>
 <p>For example:</p>
-<pre><code class="language-js"><span class="hljs-keyword">let</span> s0 = <span class="hljs-title function_">utf8ToByteString</span>(<span class="hljs-string">&#x27;hello world&#x27;</span>);  <span class="hljs-comment">// valid, s0 === "68656c6c6f20776f726c64"</span>
+<pre><code class="language-js"><span class="hljs-keyword">let</span> s0 = <span class="hljs-title function_">utf8ToByteString</span>(<span class="hljs-string">"hello world"</span>) <span class="hljs-comment">// valid, s0 === "68656c6c6f20776f726c64"</span>
 
-<span class="hljs-keyword">let</span> s1 = <span class="hljs-title function_">toByteString</span>(<span class="hljs-string">&#x27;01ab23ef&#x27;</span>);       <span class="hljs-comment">// valid, s1 === &#x27;01ab23ef&#x27;</span>
+<span class="hljs-keyword">let</span> s1 = <span class="hljs-title function_">toByteString</span>(<span class="hljs-string">"01ab23ef"</span>) <span class="hljs-comment">// valid, s1 === &#x27;01ab23ef&#x27;</span>
 
-<span class="hljs-keyword">let</span> invalid_str = <span class="hljs-string">"hello world"</span>;  <span class="hljs-comment">// invalid, string literal without wrapper function</span>
+<span class="hljs-keyword">let</span> invalid_str = <span class="hljs-string">"hello world"</span> <span class="hljs-comment">// invalid, string literal without wrapper function</span>
 
-<span class="hljs-keyword">let</span> invalid_str2 = <span class="hljs-title function_">toByteString</span>(<span class="hljs-string">&#x27;012&#x27;</span>); <span class="hljs-comment">// invalid, odd number of hex characters</span>
+<span class="hljs-keyword">let</span> invalid_str2 = <span class="hljs-title function_">toByteString</span>(<span class="hljs-string">"012"</span>) <span class="hljs-comment">// invalid, odd number of hex characters</span>
 </code></pre>
 <p>Also there are only a few methods of <code>ByteString</code> can be used in <code>@method</code>s:</p>
 <ul>
@@ -35,14 +35,14 @@ const html = `<p>The most basic types allowed are: <code>boolean</code> / <code>
 <ul>
 <li><a href="#compile-time-constant">A compile-time constant</a></li>
 </ul>
-<pre><code class="language-ts"><span class="hljs-keyword">const</span> <span class="hljs-attr">N</span>: <span class="hljs-built_in">number</span> = <span class="hljs-number">2</span>;
-<span class="hljs-keyword">let</span> <span class="hljs-attr">arr</span>: <span class="hljs-title class_">FixedArray</span>&lt;<span class="hljs-built_in">bigint</span>, N&gt; = [<span class="hljs-number">1n</span>, <span class="hljs-number">2n</span>];
+<pre><code class="language-ts"><span class="hljs-keyword">const</span> <span class="hljs-attr">N</span>: <span class="hljs-built_in">number</span> = <span class="hljs-number">2</span>
+<span class="hljs-keyword">let</span> <span class="hljs-attr">arr</span>: <span class="hljs-title class_">FixedArray</span>&lt;<span class="hljs-built_in">bigint</span>, N&gt; = [<span class="hljs-number">1n</span>, <span class="hljs-number">2n</span>]
 </code></pre>
 <ul>
 <li>An array index</li>
 </ul>
-<pre><code class="language-ts"><span class="hljs-keyword">let</span> idx : <span class="hljs-built_in">number</span> = <span class="hljs-number">3</span>;
-<span class="hljs-keyword">let</span> item = arr[idx];
+<pre><code class="language-ts"><span class="hljs-keyword">let</span> <span class="hljs-attr">idx</span>: <span class="hljs-built_in">number</span> = <span class="hljs-number">3</span>
+<span class="hljs-keyword">let</span> item = arr[idx]
 </code></pre>
 <ul>
 <li>An induction variable in <code>for</code> statement</li>

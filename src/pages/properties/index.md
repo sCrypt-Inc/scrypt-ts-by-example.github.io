@@ -8,10 +8,9 @@ A smart contract can have two kinds of properties:
 
 1. Properties with `@prop` decorator. These properties are **only allowed to have [types](#Types) specified below** and they shall only be initialized in the constructor.
 
-2.  Properties without `@prop` decorator. These properties are normal TypeScript class properties without any special requirement.
+2. Properties without `@prop` decorator. These properties are normal TypeScript class properties without any special requirement.
 
-
-### `@prop(stateful: boolean = false)` decorator 
+### `@prop(stateful: boolean = false)` decorator
 
 Use this decorator to mark any property that intends to be stored on chain.
 

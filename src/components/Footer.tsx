@@ -8,7 +8,6 @@ import github from "./github.png"
 import slack from "./slack.png"
 import medium from "./medium.png"
 
-
 function Footer() {
   return (
     <div className={styles.component}>
@@ -33,7 +32,10 @@ function Footer() {
         </div>
         <div className={styles.row}>
           <img src={slack} alt="slack" className={styles.slack} />
-          <a href="https://join.slack.com/t/scryptworkspace/shared_invite/enQtNzQ1OTMyNDk1ODU3LTJmYjE5MGNmNDZhYmYxZWM4ZGY2MTczM2NiNTIxYmFhNTVjNjE5MGYwY2UwNDYxMTQyNGU2NmFkNTY5MmI1MWM" target="__blank">
+          <a
+            href="https://join.slack.com/t/scryptworkspace/shared_invite/enQtNzQ1OTMyNDk1ODU3LTJmYjE5MGNmNDZhYmYxZWM4ZGY2MTczM2NiNTIxYmFhNTVjNjE5MGYwY2UwNDYxMTQyNGU2NmFkNTY5MmI1MWM"
+            target="__blank"
+          >
             Slack
           </a>
         </div>
@@ -45,9 +47,7 @@ function Footer() {
         </div>
       </div>
       <div className={styles.row}>
-        <a href="mailto:contact@support@scrypt.io">
-            support@scrypt.io
-        </a>
+        <a href="mailto:contact@support@scrypt.io">support@scrypt.io</a>
       </div>
       <div className={styles.row}>
         <a

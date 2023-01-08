@@ -8,12 +8,12 @@ Users can be define customized types using `type` or `interface`, made of basic 
 
 ```ts
 type ST = {
-  a: bigint;
-  b: boolean;
+  a: bigint
+  b: boolean
 }
 
 interface ST1 {
-  x: ST;
-  y: string;
+  x: ST
+  y: string
 }
 ```
