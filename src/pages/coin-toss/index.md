@@ -11,26 +11,24 @@ Alice and Bob decide to flip a coin, but they have no physical coin or they want
 
 ```ts
 class CoinToss extends SmartContract {
-
   // Public keys:
   @prop()
-  alice: PubKey;
+  alice: PubKey
   @prop()
-  bob: PubKey;
-  
+  bob: PubKey
+
   // Commitments:
   @prop()
-  aliceHash: Sha256;
+  aliceHash: Sha256
   @prop()
-  bobHash: Sha256;
+  bobHash: Sha256
 
-  constructor(alice: PubKey, bob: PubKey,
-              aliceHash: Sha256, bobHash: Sha256) {
-    super(alice, bob, aliceHash, bobHash);
-    this.alice = alice;
-    this.bob = bob;
-    this.aliceHash = aliceHash;
-    this.bobHash = bobHash;
+  constructor(alice: PubKey, bob: PubKey, aliceHash: Sha256, bobHash: Sha256) {
+    super(alice, bob, aliceHash, bobHash)
+    this.alice = alice
+    this.bob = bob
+    this.aliceHash = aliceHash
+    this.bobHash = bobHash
   }
 
   @method()
@@ -38,19 +36,17 @@ class CoinToss extends SmartContract {
     // Nonces can be of any length, as long as they're
     // resistant to brute-force attacks.
     // We use 256 bits / 32 bytes as an example here.
-    assert(len(aliceNonce) == 32);
-    assert(hash256(aliceNonce) == this.aliceHash);
-    assert(len(bobNonce) == 32);
-    assert(hash256(bobNonce) == this.bobHash);
-    
-    let aliceNonceInt = unpack(aliceNonce);
-    let bobNonceInt = unpack(bobNonce);
-    let head = and(xor(aliceNonceInt, bobNonceInt), 0n);
-    
-    let winner = head ? this.alice : this.bob;
-    assert(checkSig(sig, winner));
+    assert(len(aliceNonce) == 32)
+    assert(hash256(aliceNonce) == this.aliceHash)
+    assert(len(bobNonce) == 32)
+    assert(hash256(bobNonce) == this.bobHash)
+
+    let aliceNonceInt = unpack(aliceNonce)
+    let bobNonceInt = unpack(bobNonce)
+    let head = and(xor(aliceNonceInt, bobNonceInt), 0n)
+
+    let winner = head ? this.alice : this.bob
+    assert(checkSig(sig, winner))
   }
-
 }
-
 ```

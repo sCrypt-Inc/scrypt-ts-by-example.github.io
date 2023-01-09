@@ -11,7 +11,7 @@ p’ = p + x</p>
 </blockquote>
 <p>The corresponding public key, <strong>P’</strong>, can be derived as follows:</p>
 <blockquote>
-<p>P’ = p’ * G = (p + x) * G = P + x * G</p>
+<p>P’ = p’ _ G = (p + x) _ G = P + x * G</p>
 </blockquote>
 <p>The oracle uses the derived private key <strong>p’</strong> to sign, instead of the original <strong>p</strong>. Since only the oracle knows <strong>p</strong>, only he knows <strong>p’</strong> and can use it to sign against <strong>P’</strong>. To calculate <strong>P’</strong> in a contract, we need to calculate <strong>X = x * G</strong> and then add the result with <strong>P</strong>.</p>
 <p>In order to verify the correct public key sum efficiently, we also pass <strong>lambda</strong>, which is the gradient between <strong>P</strong> and <strong>X</strong>:</p>
@@ -22,47 +22,44 @@ p’ = p + x</p>
 <p>lambda = ((Xy - Py) / (Xx - Px)) % n</p>
 </blockquote>
 <pre><code class="language-ts"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Oracle</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">SmartContract</span> {
-  
   <span class="hljs-comment">// Oracles public key:</span>
   <span class="hljs-meta">@prop</span>()
-  <span class="hljs-attr">P</span>: <span class="hljs-title class_">PubKey</span>;
-  
+  <span class="hljs-attr">P</span>: <span class="hljs-title class_">PubKey</span>
+
   <span class="hljs-title function_">constructor</span>(<span class="hljs-params">P: PubKey</span>) {
-    <span class="hljs-variable language_">super</span>(P);
-    <span class="hljs-variable language_">this</span>.<span class="hljs-property">P</span> = P;
+    <span class="hljs-variable language_">super</span>(P)
+    <span class="hljs-variable language_">this</span>.<span class="hljs-property">P</span> = P
   }
 
   <span class="hljs-meta">@method</span>()
   <span class="hljs-title function_">fromLEUnsigned</span>(<span class="hljs-attr">b</span>: <span class="hljs-built_in">string</span>): <span class="hljs-built_in">bigint</span> {
     <span class="hljs-comment">// Append positive sign byte in case it isn&#x27;t already.</span>
     <span class="hljs-comment">// (if the suffix is &#x27;0000&#x27; the result stays the same)</span>
-    <span class="hljs-keyword">return</span> <span class="hljs-title function_">unpack</span>(b + <span class="hljs-string">&#x27;00&#x27;</span>);
+    <span class="hljs-keyword">return</span> <span class="hljs-title function_">unpack</span>(b + <span class="hljs-string">"00"</span>)
   }
 
   <span class="hljs-meta">@method</span>()
-  <span class="hljs-keyword">public</span> <span class="hljs-title function_">verify</span>(<span class="hljs-params">data: <span class="hljs-built_in">string</span>, 
-                sig: Sig,
-                derP: PubKey,
-                X: PubKey,
-                lambda: <span class="hljs-built_in">bigint</span>
-                </span>) {
-    
-    <span class="hljs-keyword">let</span> hash = <span class="hljs-title function_">sha256</span>(data);
-    
-    <span class="hljs-keyword">let</span> x = <span class="hljs-title class_">PrivKey</span>(<span class="hljs-title function_">fromLEUnsigned</span>(hash));
-    
+  <span class="hljs-keyword">public</span> <span class="hljs-title function_">verify</span>(<span class="hljs-params">data: <span class="hljs-built_in">string</span>, sig: Sig, derP: PubKey, X: PubKey, lambda: <span class="hljs-built_in">bigint</span></span>) {
+    <span class="hljs-keyword">let</span> hash = <span class="hljs-title function_">sha256</span>(data)
+
+    <span class="hljs-keyword">let</span> x = <span class="hljs-title class_">PrivKey</span>(<span class="hljs-title function_">fromLEUnsigned</span>(hash))
+
     <span class="hljs-comment">// Verify X = x * G</span>
     <span class="hljs-comment">// Use tx preimage trick for very efficient verification.</span>
-    <span class="hljs-title function_">assert</span>(<span class="hljs-title class_">Tx</span>.<span class="hljs-title function_">checkPreimageAdvanced</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">ctx</span>.<span class="hljs-property">tx</span>.<span class="hljs-title function_">getPreimage</span>(), <span class="hljs-title class_">SigHashType</span>(<span class="hljs-title function_">or</span>(<span class="hljs-title class_">Sighash</span>.<span class="hljs-property">ALL</span>, <span class="hljs-title class_">SigHash</span>.<span class="hljs-property">FORKID</span>))));
-    
+    <span class="hljs-title function_">assert</span>(
+      <span class="hljs-title class_">Tx</span>.<span class="hljs-title function_">checkPreimageAdvanced</span>(
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">ctx</span>.<span class="hljs-property">tx</span>.<span class="hljs-title function_">getPreimage</span>(),
+        <span class="hljs-title class_">SigHashType</span>(<span class="hljs-title function_">or</span>(<span class="hljs-title class_">Sighash</span>.<span class="hljs-property">ALL</span>, <span class="hljs-title class_">SigHash</span>.<span class="hljs-property">FORKID</span>))
+      )
+    )
+
     <span class="hljs-comment">// Verify P&#x27; = P + X</span>
-    <span class="hljs-keyword">let</span> ec = <span class="hljs-keyword">new</span> <span class="hljs-title function_">EC</span>();
-    <span class="hljs-title function_">assert</span>(ec.<span class="hljs-title function_">isPubKeySum</span>(P, X, lambda, derP));
+    <span class="hljs-keyword">let</span> ec = <span class="hljs-keyword">new</span> <span class="hljs-title function_">EC</span>()
+    <span class="hljs-title function_">assert</span>(ec.<span class="hljs-title function_">isPubKeySum</span>(P, X, lambda, derP))
 
     <span class="hljs-comment">// Verify signature is from oracle, who knows p&#x27; = p + x</span>
-    <span class="hljs-title function_">assert</span>(<span class="hljs-title function_">checkSig</span>(sig, derP));
+    <span class="hljs-title function_">assert</span>(<span class="hljs-title function_">checkSig</span>(sig, derP))
   }
-
 }
 </code></pre>
 `

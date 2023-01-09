@@ -2,7 +2,7 @@
 export const version = "0.1.0"
 export const title = "Hash Puzzle"
 export const description = "Hash puzzles in scryptTS"
-export const replitLink = ""
+export const replitLink = "https://replit.com/@msinkec/scryptTS-hashpuzzle?embed=true"
 
 const html = `<p>A hash puzzle is a smart contract that can be unlocked by providing a hash preimage of predefined hash value.</p>
 <pre><code class="language-ts"><span class="hljs-keyword">class</span> <span class="hljs-title class_">HashPuzzle</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">SmartContract</span> {

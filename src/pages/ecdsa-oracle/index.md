@@ -11,9 +11,9 @@ description: ECDSA-base oracles in scryptTS
 
 The corresponding public key, **P’**, can be derived as follows:
 
-> P’ = p’ * G = (p + x) * G = P + x * G
+> P’ = p’ _ G = (p + x) _ G = P + x \* G
 
-The oracle uses the derived private key **p’** to sign, instead of the original **p**. Since only the oracle knows **p**, only he knows **p’** and can use it to sign against **P’**. To calculate **P’** in a contract, we need to calculate **X = x * G** and then add the result with **P**.
+The oracle uses the derived private key **p’** to sign, instead of the original **p**. Since only the oracle knows **p**, only he knows **p’** and can use it to sign against **P’**. To calculate **P’** in a contract, we need to calculate **X = x \* G** and then add the result with **P**.
 
 In order to verify the correct public key sum efficiently, we also pass **lambda**, which is the gradient between **P** and **X**:
 
@@ -21,50 +21,45 @@ In order to verify the correct public key sum efficiently, we also pass **lambda
 
 > lambda = ((Xy - Py) / (Xx - Px)) % n
 
-
 ```ts
 class Oracle extends SmartContract {
-  
   // Oracles public key:
   @prop()
-  P: PubKey;
-  
+  P: PubKey
+
   constructor(P: PubKey) {
-    super(P);
-    this.P = P;
+    super(P)
+    this.P = P
   }
 
   @method()
   fromLEUnsigned(b: string): bigint {
     // Append positive sign byte in case it isn't already.
     // (if the suffix is '0000' the result stays the same)
-    return unpack(b + '00');
+    return unpack(b + "00")
   }
 
   @method()
-  public verify(data: string, 
-                sig: Sig,
-                derP: PubKey,
-                X: PubKey,
-                lambda: bigint
-                ) {
-    
-    let hash = sha256(data);
-    
-    let x = PrivKey(fromLEUnsigned(hash));
-    
+  public verify(data: string, sig: Sig, derP: PubKey, X: PubKey, lambda: bigint) {
+    let hash = sha256(data)
+
+    let x = PrivKey(fromLEUnsigned(hash))
+
     // Verify X = x * G
     // Use tx preimage trick for very efficient verification.
-    assert(Tx.checkPreimageAdvanced(this.ctx.tx.getPreimage(), SigHashType(or(Sighash.ALL, SigHash.FORKID))));
-    
+    assert(
+      Tx.checkPreimageAdvanced(
+        this.ctx.tx.getPreimage(),
+        SigHashType(or(Sighash.ALL, SigHash.FORKID))
+      )
+    )
+
     // Verify P' = P + X
-    let ec = new EC();
-    assert(ec.isPubKeySum(P, X, lambda, derP));
+    let ec = new EC()
+    assert(ec.isPubKeySum(P, X, lambda, derP))
 
     // Verify signature is from oracle, who knows p' = p + x
-    assert(checkSig(sig, derP));
+    assert(checkSig(sig, derP))
   }
-
 }
-
 ```
