@@ -2,7 +2,7 @@
 export const version = "0.1.0"
 export const title = "State"
 export const description = "Smart contract state in scryptTS"
-export const replitLink = ""
+export const replitLink = "https://replit.com/@msinkec/scryptTS-counter?embed=true"
 
 const html = `<p>As shown on the previous page we can put arbitrary constraints on the data of next transaction by using <code>this.tx</code>. The following is an example of a simple counter smart contract. Every iteration of the contract must contain a value <code>count</code> which is bigger by one from the previous iteration.</p>
 <pre><code class="language-ts"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Counter</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">SmartContract</span> {
