@@ -183,6 +183,16 @@ export default function HomePage() {
           examples.
         </p>
 
+        <div className={styles.youTube}>
+          <img src={youTube} alt="logo" className={styles.youTubeLogo} />
+          <a
+            href="https://www.youtube.com/playlist?list=PL0Kn1t30VSpGcbwN-bcbU1-x0fRAoq-GI"
+            target="__blank"
+          >
+            Learning scryptTS video playlist.
+          </a>
+        </div>
+
         <div className={styles.updates}>
           {UPDATES.map((text, i) => (
             <div key={i}>{text}</div>
