@@ -1,6 +1,6 @@
-# solidity-by-example.github.io
+# scrypt-ts-by-example.github.io
 
-[Solidity By Example](https://solidity-by-example.org)
+[scryptTS By Example](https://by-example.scrypt.io)
 
 ### License
 
