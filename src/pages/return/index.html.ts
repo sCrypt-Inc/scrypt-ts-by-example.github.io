@@ -4,7 +4,7 @@ export const title = "Return Statement"
 export const description = "Return statement in scryptTS"
 export const replitLink = ""
 
-const html = `<p>Due to the lack of native return semantics support in Bitcoin Script, a function currently must end with a <code>return</code> statement and it is the only valid place for a <code>return</code> statement. This requirement may be relaxed in the future.</p>
+const html = `<p>Every smart contract method must end with a <code>return</code>statement. Additionally it is the only place where we can use it.</p>
 <pre><code class="language-ts"><span class="hljs-meta">@method</span>() <span class="hljs-title function_">m</span>(<span class="hljs-attr">x</span>: <span class="hljs-built_in">bigint</span>): <span class="hljs-built_in">bigint</span> {
    <span class="hljs-keyword">if</span> (x &gt; <span class="hljs-number">2n</span>) <span class="hljs-keyword">return</span> x; <span class="hljs-comment">// invalid</span>
    <span class="hljs-keyword">return</span> x + <span class="hljs-number">1n</span>;  <span class="hljs-comment">// valid</span>

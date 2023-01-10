@@ -12,7 +12,7 @@ const html = `<p>Bitcoin Script does not provide looping constructs natively for
 <p>Note:</p>
 <ul>
 <li>the initial value must be <code>0</code>, the operator <code>&lt;</code> (no <code>&lt;=</code>), and increment <code>$i++</code> (no pre-increment <code>++$i</code>).</li>
-<li><code>$maxLoopCount</code> must be a <a href="#compile-time-constant">CTC</a>.</li>
+<li><code>$maxLoopCount</code> must be a compile-time constant.</li>
 <li><code>$i</code> can be arbitrary name, e.g., <code>i</code>, <code>j</code>, or <code>k</code>.</li>
 <li><code>break</code> and <code>continue</code> are currently not allowed.</li>
 </ul>

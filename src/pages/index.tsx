@@ -14,12 +14,16 @@ const SOL_ROUTES: Route[] = [
     title: "Hello World",
   },
   {
-    path: "constructor",
-    title: "Constructor",
+    path: "variable-declarations",
+    title: "Variable Declarations",
   },
   {
     path: "properties",
     title: "Properties",
+  },
+  {
+    path: "constructor",
+    title: "Constructor",
   },
   {
     path: "methods",
@@ -42,10 +46,6 @@ const SOL_ROUTES: Route[] = [
     title: "Domain Types",
   },
   {
-    path: "variable-declarations",
-    title: "Variable Declarations",
-  },
-  {
     path: "for-loop",
     title: "For-loop",
   },
@@ -54,8 +54,12 @@ const SOL_ROUTES: Route[] = [
     title: "Return Statement",
   },
   {
-    path: "functions",
-    title: "Functions",
+    path: "builtin-functions",
+    title: "Built-in Functions",
+  },
+  {
+    path: "console-log",
+    title: "Console logging",
   },
   {
     path: "operators",
@@ -64,6 +68,10 @@ const SOL_ROUTES: Route[] = [
   {
     path: "script-context",
     title: "ScriptContext",
+  },
+  {
+    path: "state",
+    title: "State",
   },
 ]
 

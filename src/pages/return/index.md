@@ -4,7 +4,7 @@ version: 0.1.0
 description: Return statement in scryptTS
 ---
 
-Due to the lack of native return semantics support in Bitcoin Script, a function currently must end with a `return` statement and it is the only valid place for a `return` statement. This requirement may be relaxed in the future.
+Every smart contract method must end with a `return`statement. Additionally it is the only place where we can use it.
 
 ```ts
 @method() m(x: bigint): bigint {

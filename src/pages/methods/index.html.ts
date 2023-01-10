@@ -4,20 +4,18 @@ export const title = "Methods"
 export const description = "Methods in scryptTS"
 export const replitLink = ""
 
-const html = `<p>Like properties, a smart contract can also have two kinds of methods:</p>
+const html = `<p>A smart contract can have two kinds of methods:</p>
 <ol>
-<li><p>Methods without <code>@method</code> decorator. These methods are just like normal TypeScript class methods with no special restraints.</p>
+<li><p>Methods without <code>@method</code> decorator. These methods are just like normal TypeScript class methods with no special restraints. These aren&#39;t part of the on-chain smart contract and can only be run locally.</p>
 </li>
-<li><p>Methods with <code>@method</code> decorator. These methods can only call <strong>methods also decorated by <code>@method</code> or <a href="#Functions">functions</a> specified below</strong>. Similarly, <strong>only the properties decorated by <code>@prop</code> can be accessed</strong>.</p>
+<li><p>Methods with <code>@method</code> decorator. These are part of the on-chain smart contract. These methods can only call <strong>methods also decorated by <code>@method</code> or <a href="#Functions">functions</a> specified below</strong>. Similarly, <strong>only the properties decorated by <code>@prop</code> can be accessed</strong>.</p>
 </li>
 </ol>
-<h3 id="method-decorator"><code>@method</code> decorator</h3>
-<p>Use this decorator to mark any function that intends to be stored on chain.</p>
 <h3 id="public-methods">Public <code>@method</code>s</h3>
 <p>Each contract has at least one public method. It is denoted with the <code>public</code> modifier and does not return any value. It is visible outside the contract and acts as the entry point into the contract (like main in C and Java).</p>
-<p>A public method can be called from an external transaction. The call succeeds if it runs to completion without violating any conditions in <a href="#%60assert%60">assert()</a>. An example is shown below.</p>
+<p>A public method can be called from an unlocking transaction. The input parameters are passed via an unlocking script.</p>
 <pre><code class="language-js">  @<span class="hljs-title function_">method</span>()
-  public <span class="hljs-title function_">unlock</span>(<span class="hljs-params">x: bigint</span>) {
+  public <span class="hljs-title function_">unlock</span>(<span class="hljs-params">x: bigint</span>) {  <span class="hljs-comment">// Value of x is passed via unlocking script</span>
     <span class="hljs-title function_">assert</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-title function_">add</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">x</span>, <span class="hljs-number">1n</span>) === x);
   }
 </code></pre>
