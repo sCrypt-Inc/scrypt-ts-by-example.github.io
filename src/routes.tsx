@@ -2,6 +2,7 @@ import component_array_types from "./pages/array-types"
 import component_auction from "./pages/auction"
 import component_basic_types from "./pages/basic-types"
 import component_builtin_functions from "./pages/builtin-functions"
+import component_cltv from "./pages/cltv"
 import component_coin_toss from "./pages/coin-toss"
 import component_console_log from "./pages/console-log"
 import component_constructor from "./pages/constructor"
@@ -55,6 +56,10 @@ const routes: Route[] = [
   {
     path: "/builtin-functions",
     component: component_builtin_functions,
+  },
+  {
+    path: "/cltv",
+    component: component_cltv,
   },
   {
     path: "/coin-toss",

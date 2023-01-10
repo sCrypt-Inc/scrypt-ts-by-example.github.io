@@ -100,6 +100,10 @@ const APP_ROUTES: Route[] = [
     path: "tic-tac-toe",
     title: "Tic-Tac-Toe",
   },
+  {
+    path: "cltv",
+    title: "CLTV (Time-lock)",
+  },
 ]
 
 const HACK_ROUTES: Route[] = []
