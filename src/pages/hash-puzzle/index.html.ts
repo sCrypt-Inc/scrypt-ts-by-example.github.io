@@ -16,7 +16,7 @@ const html = `<p>A hash puzzle is a smart contract that can be unlocked by provi
 
   <span class="hljs-meta">@method</span>()
   <span class="hljs-keyword">public</span> <span class="hljs-title function_">unlock</span>(<span class="hljs-params">data: <span class="hljs-built_in">string</span></span>) {
-    <span class="hljs-title function_">assert</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">sha256</span> == <span class="hljs-title function_">sha256</span>(data), <span class="hljs-string">&#x27;Wrong data&#x27;</span>)
+    <span class="hljs-title function_">assert</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">sha256</span> == <span class="hljs-title function_">sha256</span>(data), <span class="hljs-string">"Wrong data"</span>)
   }
 }
 </code></pre>

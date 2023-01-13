@@ -4,11 +4,13 @@ version: 0.1.0
 description: Basic types in scryptTS
 ---
 
-Basic types allowed to be used in `@prop`s and `@method`s are: `boolean` / `string` / `bigint`, along with their wrapper types `Boolean` / `String` / `Bigint`.
+Basic types allowed to be used in `@prop`s and `@method`s are `boolean` and `bigint`, along with their wrapper types `Boolean` and `BigInt`.
+
+A `string` literal is not allowed to be used directly without being converted into a `ByteString`.
 
 ```ts
 @method()
-public example(x: bigint, y: string, z: boolean) {
+public example(x: bigint, y: ByteString, z: boolean) {
     assert(x == 5n);
     assert(z);
     // Strings must by converted to ByteString before being used

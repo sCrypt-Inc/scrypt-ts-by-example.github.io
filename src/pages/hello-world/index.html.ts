@@ -18,7 +18,7 @@ In a Bitcoin context this means, that we need to include an integer <code>y</cod
 
   <span class="hljs-meta">@method</span>()
   <span class="hljs-keyword">public</span> <span class="hljs-title function_">equals</span>(<span class="hljs-params">y: <span class="hljs-built_in">bigint</span></span>) {
-    <span class="hljs-title function_">assert</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">x</span> == y, <span class="hljs-string">&#x27;x doesn\\&#x27;t equal y&#x27;</span>)
+    <span class="hljs-title function_">assert</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">x</span> == y, <span class="hljs-string">"x doesn&#x27;t equal y"</span>)
   }
 }
 </code></pre>

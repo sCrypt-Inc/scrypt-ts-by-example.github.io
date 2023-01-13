@@ -10,13 +10,13 @@ The `super` method must be called in the constructor with all the arguments for 
 
 ```js
 class A extends SmartContract {
-  p0: string
+  p0: ByteString
 
   @prop() p1: bigint
 
   @prop() p2: boolean
 
-  constructor(p0: string, p1: bigint, p2: boolean) {
+  constructor(p0: ByteString, p1: bigint, p2: boolean) {
     super(p1, p2)
     this.p0 = p0
     this.p1 = p1

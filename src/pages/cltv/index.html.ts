@@ -17,14 +17,14 @@ const html = `<p>We can write smart contracts that can only be unlocked after a 
   <span class="hljs-meta">@method</span>()
   <span class="hljs-keyword">public</span> <span class="hljs-title function_">unlock</span>(<span class="hljs-params"></span>) {
     <span class="hljs-comment">// Ensure nSequence is less than UINT_MAX.</span>
-    <span class="hljs-title function_">assert</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">ctx</span>.<span class="hljs-property">nSequence</span> &lt; <span class="hljs-number">4294967295n</span>, <span class="hljs-string">&#x27;nSequence must be less than UINT_MAX&#x27;</span>)
+    <span class="hljs-title function_">assert</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">ctx</span>.<span class="hljs-property">nSequence</span> &lt; <span class="hljs-number">4294967295n</span>, <span class="hljs-string">"nSequence must be less than UINT_MAX"</span>)
 
     <span class="hljs-comment">// Check if using block height.</span>
     <span class="hljs-keyword">if</span> (<span class="hljs-variable language_">this</span>.<span class="hljs-property">matureTime</span> &lt; <span class="hljs-number">500000000n</span>) {
       <span class="hljs-comment">// Enforce nLocktime field to also use block height.</span>
-      <span class="hljs-title function_">assert</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">ctx</span>.<span class="hljs-property">nLocktime</span> &lt; <span class="hljs-number">500000000n</span>, <span class="hljs-string">&#x27;nLocktime too low&#x27;</span>)
+      <span class="hljs-title function_">assert</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">ctx</span>.<span class="hljs-property">nLocktime</span> &lt; <span class="hljs-number">500000000n</span>, <span class="hljs-string">"nLocktime too low"</span>)
     }
-    <span class="hljs-title function_">assert</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">ctx</span>.<span class="hljs-property">nLocktime</span> &gt;= <span class="hljs-variable language_">this</span>.<span class="hljs-property">matureTime</span>, <span class="hljs-string">&#x27;nLocktime too low&#x27;</span>)
+    <span class="hljs-title function_">assert</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">ctx</span>.<span class="hljs-property">nLocktime</span> &gt;= <span class="hljs-variable language_">this</span>.<span class="hljs-property">matureTime</span>, <span class="hljs-string">"nLocktime too low"</span>)
   }
 }
 </code></pre>

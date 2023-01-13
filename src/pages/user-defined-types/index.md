@@ -14,6 +14,6 @@ type ST = {
 
 interface ST1 {
   x: ST
-  y: string
+  y: ByteString
 }
 ```

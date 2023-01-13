@@ -4,9 +4,10 @@ export const title = "Basic Types"
 export const description = "Basic types in scryptTS"
 export const replitLink = ""
 
-const html = `<p>Basic types allowed to be used in <code>@prop</code>s and <code>@method</code>s are: <code>boolean</code> / <code>string</code> / <code>bigint</code>, along with their wrapper types <code>Boolean</code> / <code>String</code> / <code>Bigint</code>.</p>
+const html = `<p>Basic types allowed to be used in <code>@prop</code>s and <code>@method</code>s are <code>boolean</code> and <code>bigint</code>, along with their wrapper types <code>Boolean</code> and <code>BigInt</code>.</p>
+<p>A <code>string</code> literal is not allowed to be used directly without being converted into a <code>ByteString</code>.</p>
 <pre><code class="language-ts"><span class="hljs-meta">@method</span>()
-<span class="hljs-keyword">public</span> <span class="hljs-title function_">example</span>(<span class="hljs-params">x: <span class="hljs-built_in">bigint</span>, y: <span class="hljs-built_in">string</span>, z: <span class="hljs-built_in">boolean</span></span>) {
+<span class="hljs-keyword">public</span> <span class="hljs-title function_">example</span>(<span class="hljs-params">x: <span class="hljs-built_in">bigint</span>, y: ByteString, z: <span class="hljs-built_in">boolean</span></span>) {
     <span class="hljs-title function_">assert</span>(x == <span class="hljs-number">5n</span>);
     <span class="hljs-title function_">assert</span>(z);
     <span class="hljs-comment">// Strings must by converted to ByteString before being used</span>

@@ -33,17 +33,10 @@ class Oracle extends SmartContract {
   }
 
   @method()
-  fromLEUnsigned(b: string): bigint {
-    // Append positive sign byte in case it isn't already.
-    // (if the suffix is '0000' the result stays the same)
-    return unpack(b + "00")
-  }
-
-  @method()
-  public verify(data: string, sig: Sig, derP: PubKey, X: PubKey, lambda: bigint) {
+  public verify(data: ByteString, sig: Sig, derP: PubKey, X: PubKey, lambda: bigint) {
     let hash = sha256(data)
 
-    let x = PrivKey(fromLEUnsigned(hash))
+    let x = PrivKey(Utils.fromLEUnsigned(hash))
 
     // Verify X = x * G
     // Use tx preimage trick for very efficient verification.

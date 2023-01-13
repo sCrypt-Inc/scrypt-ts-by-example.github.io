@@ -43,13 +43,13 @@ const html = `<p>To initiate a game, Alice and Bob each lock up X amount of bitc
 
   <span class="hljs-meta">@method</span>()
   <span class="hljs-keyword">public</span> <span class="hljs-title function_">move</span>(<span class="hljs-params">n: <span class="hljs-built_in">bigint</span>, sig: Sig, amount: <span class="hljs-built_in">bigint</span></span>) {
-    <span class="hljs-title function_">assert</span>(n &gt;= <span class="hljs-number">0n</span> &amp;&amp; n &lt; <span class="hljs-title class_">TicTacToe</span>.<span class="hljs-property">BOARDLEN</span>, <span class="hljs-string">&#x27;Field out of bounds&#x27;</span>)
-    <span class="hljs-title function_">assert</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">board</span>[<span class="hljs-title class_">Number</span>(n)] == <span class="hljs-title class_">TicTacToe</span>.<span class="hljs-property">EMPTY</span>, <span class="hljs-string">&#x27;Field not empty&#x27;</span>)
+    <span class="hljs-title function_">assert</span>(n &gt;= <span class="hljs-number">0n</span> &amp;&amp; n &lt; <span class="hljs-title class_">TicTacToe</span>.<span class="hljs-property">BOARDLEN</span>, <span class="hljs-string">"Field out of bounds"</span>)
+    <span class="hljs-title function_">assert</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">board</span>[<span class="hljs-title class_">Number</span>(n)] == <span class="hljs-title class_">TicTacToe</span>.<span class="hljs-property">EMPTY</span>, <span class="hljs-string">"Field not empty"</span>)
 
     <span class="hljs-keyword">let</span> play = <span class="hljs-variable language_">this</span>.<span class="hljs-property">is_alice_turn</span> ? <span class="hljs-title class_">TicTacToe</span>.<span class="hljs-property">ALICE</span> : <span class="hljs-title class_">TicTacToe</span>.<span class="hljs-property">BOB</span>
     <span class="hljs-keyword">let</span> <span class="hljs-attr">player</span>: <span class="hljs-title class_">PubKey</span> = <span class="hljs-variable language_">this</span>.<span class="hljs-property">is_alice_turn</span> ? <span class="hljs-variable language_">this</span>.<span class="hljs-property">alice</span> : <span class="hljs-variable language_">this</span>.<span class="hljs-property">bob</span>
 
-    <span class="hljs-title function_">assert</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-title function_">checkSig</span>(sig, player), <span class="hljs-string">&#x27;Bad sig&#x27;</span>)
+    <span class="hljs-title function_">assert</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-title function_">checkSig</span>(sig, player), <span class="hljs-string">"Bad sig"</span>)
     <span class="hljs-comment">// make the move</span>
     <span class="hljs-variable language_">this</span>.<span class="hljs-property">board</span>[<span class="hljs-title class_">Number</span>(n)] = play
     <span class="hljs-variable language_">this</span>.<span class="hljs-property">is_alice_turn</span> = !<span class="hljs-variable language_">this</span>.<span class="hljs-property">is_alice_turn</span>
@@ -71,7 +71,7 @@ const html = `<p>To initiate a game, Alice and Bob each lock up X amount of bitc
       outputs = <span class="hljs-variable language_">this</span>.<span class="hljs-title function_">buildStateOutput</span>(amount)
     }
 
-    <span class="hljs-title function_">assert</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">ctx</span>.<span class="hljs-property">hashOutputs</span> == <span class="hljs-title function_">hash256</span>(outputs), <span class="hljs-string">&#x27;Output hashes don\\&#x27;t match&#x27;</span>)
+    <span class="hljs-title function_">assert</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">ctx</span>.<span class="hljs-property">hashOutputs</span> == <span class="hljs-title function_">hash256</span>(outputs), <span class="hljs-string">"Output hashes don&#x27;t match"</span>)
   }
 
   <span class="hljs-meta">@method</span>()

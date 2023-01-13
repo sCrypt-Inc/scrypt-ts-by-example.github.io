@@ -35,17 +35,17 @@ const html = `<p>Alice and Bob decide to flip a coin, but they have no physical 
     <span class="hljs-comment">// Nonces can be of any length, as long as they&#x27;re</span>
     <span class="hljs-comment">// resistant to brute-force attacks.</span>
     <span class="hljs-comment">// We use 256 bits / 32 bytes as an example here.</span>
-    <span class="hljs-title function_">assert</span>(<span class="hljs-title function_">len</span>(aliceNonce) == <span class="hljs-number">32</span>, <span class="hljs-string">&#x27;Nonce alice wrong len&#x27;</span>)
-    <span class="hljs-title function_">assert</span>(<span class="hljs-title function_">hash256</span>(aliceNonce) == <span class="hljs-variable language_">this</span>.<span class="hljs-property">aliceHash</span>, <span class="hljs-string">&#x27;Wrong nonce alice&#x27;</span>)
-    <span class="hljs-title function_">assert</span>(<span class="hljs-title function_">len</span>(bobNonce) == <span class="hljs-number">32</span>, <span class="hljs-string">&#x27;Nonce bob wrong len&#x27;</span>)
-    <span class="hljs-title function_">assert</span>(<span class="hljs-title function_">hash256</span>(bobNonce) == <span class="hljs-variable language_">this</span>.<span class="hljs-property">bobHash</span>, <span class="hljs-string">&#x27;Wrong nonce bob&#x27;</span>)
+    <span class="hljs-title function_">assert</span>(<span class="hljs-title function_">len</span>(aliceNonce) == <span class="hljs-number">32</span>, <span class="hljs-string">"Nonce alice wrong len"</span>)
+    <span class="hljs-title function_">assert</span>(<span class="hljs-title function_">hash256</span>(aliceNonce) == <span class="hljs-variable language_">this</span>.<span class="hljs-property">aliceHash</span>, <span class="hljs-string">"Wrong nonce alice"</span>)
+    <span class="hljs-title function_">assert</span>(<span class="hljs-title function_">len</span>(bobNonce) == <span class="hljs-number">32</span>, <span class="hljs-string">"Nonce bob wrong len"</span>)
+    <span class="hljs-title function_">assert</span>(<span class="hljs-title function_">hash256</span>(bobNonce) == <span class="hljs-variable language_">this</span>.<span class="hljs-property">bobHash</span>, <span class="hljs-string">"Wrong nonce bob"</span>)
 
     <span class="hljs-keyword">let</span> aliceNonceInt = <span class="hljs-title function_">unpack</span>(aliceNonce)
     <span class="hljs-keyword">let</span> bobNonceInt = <span class="hljs-title function_">unpack</span>(bobNonce)
     <span class="hljs-keyword">let</span> head = <span class="hljs-title function_">and</span>(<span class="hljs-title function_">xor</span>(aliceNonceInt, bobNonceInt), <span class="hljs-number">0n</span>)
 
     <span class="hljs-keyword">let</span> winner = head ? <span class="hljs-variable language_">this</span>.<span class="hljs-property">alice</span> : <span class="hljs-variable language_">this</span>.<span class="hljs-property">bob</span>
-    <span class="hljs-title function_">assert</span>(<span class="hljs-title function_">checkSig</span>(sig, winner), <span class="hljs-string">&#x27;Bad sig&#x27;</span>)
+    <span class="hljs-title function_">assert</span>(<span class="hljs-title function_">checkSig</span>(sig, winner), <span class="hljs-string">"Bad sig"</span>)
   }
 }
 </code></pre>
