@@ -19,12 +19,12 @@ class CheckLockTimeVerify extends SmartContract {
   @method()
   public unlock() {
     // Ensure nSequence is less than UINT_MAX.
-    assert(this.ctx.nSequence < 4294967295n);
-    
+    assert(this.ctx.nSequence < 4294967295n)
+
     // Check if using block height.
     if (this.matureTime < 500000000n) {
       // Enforce nLocktime field to also use block height.
-      assert(this.ctx.nLocktime < 500000000n);
+      assert(this.ctx.nLocktime < 500000000n)
     }
     assert(this.ctx.nLocktime >= this.matureTime)
   }

@@ -8,6 +8,7 @@ A [Rabin signature](https://en.wikipedia.org/wiki/Rabin_signature_algorithm) is 
 
 ```ts
 class RabinSignature extends SmartContract {
+
   @method()
   hash(x: string): string {
     // Expand into 512 bit hash
@@ -17,16 +18,10 @@ class RabinSignature extends SmartContract {
   }
 
   @method()
-  fromLEUnsigned(b: string): bigint {
-    // Append positive sign byte in case it isn't already.
-    // (if the suffix is '0000' the result stays the same)
-    return unpack(b + "00")
-  }
-
-  @method()
   public verifySig(sig: bigint, msg: string, padding: string, n: bigint) {
-    let h = this.fromLEUnsigned(this.hash(msg + padding))
+    let h = Utils.fromLEUnsigned(this.hash(msg + padding))
     assert((sig * sig) % n == h % n)
   }
+  
 }
 ```
