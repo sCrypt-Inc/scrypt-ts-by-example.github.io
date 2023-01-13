@@ -18,7 +18,7 @@ class HashPuzzle extends SmartContract {
 
   @method()
   public unlock(data: string) {
-    assert(this.sha256 == sha256(data))
+    assert(this.sha256 == sha256(data), "Wrong data")
   }
 }
 ```

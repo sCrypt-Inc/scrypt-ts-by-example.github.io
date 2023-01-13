@@ -13,8 +13,6 @@ const html = `<p>Basic types allowed to be used in <code>@prop</code>s and <code
     <span class="hljs-comment">// in a smart contract:</span>
     <span class="hljs-title function_">assert</span>(y == <span class="hljs-title function_">utf8ToByteString</span>(<span class="hljs-string">"hello world!"</span>));
 }
-<span class="hljs-keyword">let</span> <span class="hljs-attr">idx</span>: <span class="hljs-built_in">number</span> = <span class="hljs-number">3</span>
-<span class="hljs-keyword">let</span> item = arr[idx]
 </code></pre>
 <p>Compile time constants can also be of type <code>number</code>:</p>
 <ul>

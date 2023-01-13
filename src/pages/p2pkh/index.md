@@ -18,8 +18,8 @@ class P2PKH extends SmartContract {
 
   @method()
   public unlock(sig: Sig, pubkey: PubKey) {
-    assert(hash160(pubkey) == this.pubKeyHash)
-    assert(this.checkSig(sig, pubkey))
+    assert(hash160(pubkey) == this.pubKeyHash, "Wrong pub key")
+    assert(this.checkSig(sig, pubkey), "Bad sig")
   }
 }
 ```

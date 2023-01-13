@@ -45,13 +45,13 @@ class TicTacToe extends SmartContract {
 
   @method()
   public move(n: bigint, sig: Sig, amount: bigint) {
-    assert(n >= 0n && n < TicTacToe.BOARDLEN)
-    assert(this.board[Number(n)] == TicTacToe.EMPTY)
+    assert(n >= 0n && n < TicTacToe.BOARDLEN, "Field out of bounds")
+    assert(this.board[Number(n)] == TicTacToe.EMPTY, "Field not empty")
 
     let play = this.is_alice_turn ? TicTacToe.ALICE : TicTacToe.BOB
     let player: PubKey = this.is_alice_turn ? this.alice : this.bob
 
-    assert(this.checkSig(sig, player))
+    assert(this.checkSig(sig, player), "Bad sig")
     // make the move
     this.board[Number(n)] = play
     this.is_alice_turn = !this.is_alice_turn
@@ -73,7 +73,7 @@ class TicTacToe extends SmartContract {
       outputs = this.buildStateOutput(amount)
     }
 
-    assert(this.ctx.hashOutputs == hash256(outputs))
+    assert(this.ctx.hashOutputs == hash256(outputs), "Output hashes don't match")
   }
 
   @method()

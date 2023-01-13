@@ -15,8 +15,6 @@ public example(x: bigint, y: string, z: boolean) {
     // in a smart contract:
     assert(y == utf8ToByteString("hello world!"));
 }
-let idx: number = 3
-let item = arr[idx]
 ```
 
 Compile time constants can also be of type `number`:

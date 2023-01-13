@@ -20,7 +20,7 @@ class Demo extends SmartContract {
 
   @method()
   public equals(y: bigint) {
-    assert(this.x == y)
+    assert(this.x == y, "x doesn't equal y")
   }
 }
 ```

@@ -16,8 +16,8 @@ const html = `<p>Pay-to-PubKey-Hash (<a href="https://learnmeabitcoin.com/guide/
 
   <span class="hljs-meta">@method</span>()
   <span class="hljs-keyword">public</span> <span class="hljs-title function_">unlock</span>(<span class="hljs-params">sig: Sig, pubkey: PubKey</span>) {
-    <span class="hljs-title function_">assert</span>(<span class="hljs-title function_">hash160</span>(pubkey) == <span class="hljs-variable language_">this</span>.<span class="hljs-property">pubKeyHash</span>)
-    <span class="hljs-title function_">assert</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-title function_">checkSig</span>(sig, pubkey))
+    <span class="hljs-title function_">assert</span>(<span class="hljs-title function_">hash160</span>(pubkey) == <span class="hljs-variable language_">this</span>.<span class="hljs-property">pubKeyHash</span>, <span class="hljs-string">&#x27;Wrong pub key&#x27;</span>)
+    <span class="hljs-title function_">assert</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-title function_">checkSig</span>(sig, pubkey), <span class="hljs-string">&#x27;Bad sig&#x27;</span>)
   }
 }
 </code></pre>

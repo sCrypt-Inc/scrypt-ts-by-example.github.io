@@ -20,7 +20,7 @@ const html = `<p>As shown on the previous page we can put arbitrary constraints 
     <span class="hljs-variable language_">this</span>.<span class="hljs-property">count</span>++
 
     <span class="hljs-comment">// Ensure the next output will hold our updated value.</span>
-    <span class="hljs-title function_">assert</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">ctx</span>.<span class="hljs-property">hashOutputs</span> == <span class="hljs-title function_">hash256</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-title function_">buildStateOutput</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">ctx</span>.<span class="hljs-property">utxo</span>.<span class="hljs-property">value</span>)))
+    <span class="hljs-title function_">assert</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">ctx</span>.<span class="hljs-property">hashOutputs</span> == <span class="hljs-title function_">hash256</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-title function_">buildStateOutput</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">ctx</span>.<span class="hljs-property">utxo</span>.<span class="hljs-property">value</span>)), <span class="hljs-string">&#x27;Output hashes don\\&#x27;t match&#x27;</span>)
   }
 }
 </code></pre>

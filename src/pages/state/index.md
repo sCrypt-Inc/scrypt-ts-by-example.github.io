@@ -22,7 +22,10 @@ class Counter extends SmartContract {
     this.count++
 
     // Ensure the next output will hold our updated value.
-    assert(this.ctx.hashOutputs == hash256(this.buildStateOutput(this.ctx.utxo.value)))
+    assert(
+      this.ctx.hashOutputs == hash256(this.buildStateOutput(this.ctx.utxo.value)),
+      "Output hashes don't match"
+    )
   }
 }
 ```

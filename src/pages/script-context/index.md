@@ -22,19 +22,26 @@ export type ScriptContext = {
 You can directly access the relevant data of the transaction preimage through `this.ctx` in the public functions of the contract (access in non-public functions is not supported).
 
 ```ts
-class Counter extends SmartContract {
-  @prop(true)
-  count: bigint
+class CheckLockTimeVerify extends SmartContract {
+  @prop()
+  matureTime: bigint // Can be timestamp or block height.
 
-  constructor(count: bigint) {
-    super(count)
-    this.count = count
+  constructor(matureTime: bigint) {
+    super(matureTime)
+    this.matureTime = matureTime
   }
 
   @method()
-  public increment() {
-    this.count++
-    assert(this.ctx.hashOutputs == hash256(this.buildStateOutput(this.ctx.utxo.value)))
+  public unlock() {
+    // Ensure nSequence is less than UINT_MAX.
+    assert(this.ctx.nSequence < 4294967295n, "nSequence must be less than UINT_MAX")
+
+    // Check if using block height.
+    if (this.matureTime < 500000000n) {
+      // Enforce nLocktime field to also use block height.
+      assert(this.ctx.nLocktime < 500000000n, "nLocktime too low")
+    }
+    assert(this.ctx.nLocktime >= this.matureTime, "nLocktime too low")
   }
 }
 ```

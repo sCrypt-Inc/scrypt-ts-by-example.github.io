@@ -48,18 +48,24 @@ class Oracle extends SmartContract {
     // Verify X = x * G
     // Use tx preimage trick for very efficient verification.
     assert(
-      Tx.checkPreimageAdvanced(
-        this.ctx.tx.getPreimage(),
+      Tx.checkPreimageAdvancedOCS(
+        this.ctx,
+        x,
+        X,
+        TX.invK,
+        TX.r,
+        Tx.rBigEndian,
         SigHashType(or(Sighash.ALL, SigHash.FORKID))
-      )
+      ),
+      "Failed assertion: X = x * G"
     )
 
     // Verify P' = P + X
     let ec = new EC()
-    assert(ec.isPubKeySum(P, X, lambda, derP))
+    assert(ec.isPubKeySum(P, X, lambda, derP), "Failed assertion: P' = P + X")
 
     // Verify signature is from oracle, who knows p' = p + x
-    assert(checkSig(sig, derP))
+    assert(checkSig(sig, derP), "Bad oracle sig")
   }
 }
 ```

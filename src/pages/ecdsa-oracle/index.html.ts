@@ -47,18 +47,22 @@ p’ = p + x</p>
     <span class="hljs-comment">// Verify X = x * G</span>
     <span class="hljs-comment">// Use tx preimage trick for very efficient verification.</span>
     <span class="hljs-title function_">assert</span>(
-      <span class="hljs-title class_">Tx</span>.<span class="hljs-title function_">checkPreimageAdvanced</span>(
-        <span class="hljs-variable language_">this</span>.<span class="hljs-property">ctx</span>.<span class="hljs-property">tx</span>.<span class="hljs-title function_">getPreimage</span>(),
+      <span class="hljs-title class_">Tx</span>.<span class="hljs-title function_">checkPreimageAdvancedOCS</span>(
+        <span class="hljs-variable language_">this</span>.<span class="hljs-property">ctx</span>, x, X, <span class="hljs-variable constant_">TX</span>.<span class="hljs-property">invK</span>, <span class="hljs-variable constant_">TX</span>.<span class="hljs-property">r</span>, <span class="hljs-title class_">Tx</span>.<span class="hljs-property">rBigEndian</span>,
         <span class="hljs-title class_">SigHashType</span>(<span class="hljs-title function_">or</span>(<span class="hljs-title class_">Sighash</span>.<span class="hljs-property">ALL</span>, <span class="hljs-title class_">SigHash</span>.<span class="hljs-property">FORKID</span>))
-      )
+      ),
+      <span class="hljs-string">&#x27;Failed assertion: X = x * G&#x27;</span>
     )
 
     <span class="hljs-comment">// Verify P&#x27; = P + X</span>
     <span class="hljs-keyword">let</span> ec = <span class="hljs-keyword">new</span> <span class="hljs-title function_">EC</span>()
-    <span class="hljs-title function_">assert</span>(ec.<span class="hljs-title function_">isPubKeySum</span>(P, X, lambda, derP))
+    <span class="hljs-title function_">assert</span>(
+      ec.<span class="hljs-title function_">isPubKeySum</span>(P, X, lambda, derP),
+      <span class="hljs-string">&#x27;Failed assertion: P\\&#x27; = P + X&#x27;</span>
+    )
 
     <span class="hljs-comment">// Verify signature is from oracle, who knows p&#x27; = p + x</span>
-    <span class="hljs-title function_">assert</span>(<span class="hljs-title function_">checkSig</span>(sig, derP))
+    <span class="hljs-title function_">assert</span>(<span class="hljs-title function_">checkSig</span>(sig, derP), <span class="hljs-string">&#x27;Bad oracle sig&#x27;</span>)
   }
 }
 </code></pre>

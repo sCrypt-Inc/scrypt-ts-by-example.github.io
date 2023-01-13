@@ -36,17 +36,17 @@ class CoinToss extends SmartContract {
     // Nonces can be of any length, as long as they're
     // resistant to brute-force attacks.
     // We use 256 bits / 32 bytes as an example here.
-    assert(len(aliceNonce) == 32)
-    assert(hash256(aliceNonce) == this.aliceHash)
-    assert(len(bobNonce) == 32)
-    assert(hash256(bobNonce) == this.bobHash)
+    assert(len(aliceNonce) == 32, "Nonce alice wrong len")
+    assert(hash256(aliceNonce) == this.aliceHash, "Wrong nonce alice")
+    assert(len(bobNonce) == 32, "Nonce bob wrong len")
+    assert(hash256(bobNonce) == this.bobHash, "Wrong nonce bob")
 
     let aliceNonceInt = unpack(aliceNonce)
     let bobNonceInt = unpack(bobNonce)
     let head = and(xor(aliceNonceInt, bobNonceInt), 0n)
 
     let winner = head ? this.alice : this.bob
-    assert(checkSig(sig, winner))
+    assert(checkSig(sig, winner), "Bad sig")
   }
 }
 ```
