@@ -17,7 +17,7 @@ A smart contract can have two kinds of methods:
   add(x0: bigint, x1:bigint) : bigint {
     return x0 + x1;
   }
- 
+
   // Public methods can be called from the unlocking transaction.
   @method()
   public unlock(x: bigint) {  // Value of x is passed via unlocking script
@@ -28,7 +28,7 @@ A smart contract can have two kinds of methods:
   // functions. They aren't included in the smart contract code and
   // can't be called from a smart contract method.
   getContractName() : string {
-    return "ExampleContract" 
+    return "ExampleContract"
   }
 
 ```

@@ -10,7 +10,7 @@ The `super` method must be called in the constructor with all the arguments for 
 
 ```js
 class A extends SmartContract {
-  p0: ByteString  // Can't be used inside @method's
+  p0: ByteString // Can't be used inside @method's
 
   @prop() p1: bigint
 

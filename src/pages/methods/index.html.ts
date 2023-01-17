@@ -11,23 +11,26 @@ const html = `<p>A smart contract can have two kinds of methods:</p>
 <li><p>Methods with <code>@method</code> decorator. These are part of the on-chain smart contract. These methods can only call <strong>methods also decorated by <code>@method</code> or <a href="#Functions">functions</a> specified below</strong>. Similarly, <strong>only the properties decorated by <code>@prop</code> can be accessed</strong>.</p>
 </li>
 </ol>
-<h3 id="public-methods">Public <code>@method</code>s</h3>
-<p>Each contract has at least one public method. It is denoted with the <code>public</code> modifier and does not return any value. It is visible outside the contract and acts as the entry point into the contract (like main in C and Java).</p>
-<p>A public method can be called from an unlocking transaction. The input parameters are passed via an unlocking script.</p>
-<pre><code class="language-js">  @<span class="hljs-title function_">method</span>()
-  public <span class="hljs-title function_">unlock</span>(<span class="hljs-params">x: bigint</span>) {  <span class="hljs-comment">// Value of x is passed via unlocking script</span>
-    <span class="hljs-title function_">assert</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-title function_">add</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">x</span>, <span class="hljs-number">1n</span>) === x);
-  }
-</code></pre>
-<h3 id="non-public-methods">Non-Public <code>@method</code>s</h3>
-<p>Without a <code>public</code> modifier, a <code>@method</code> is an internal method and can only be called within the contract class.</p>
-<p>It can return any valid types described later. The return type must be explicitly declared. e.g.,</p>
-<pre><code class="language-js">  @<span class="hljs-title function_">method</span>()
-  <span class="hljs-title function_">add</span>(<span class="hljs-attr">x0</span>: bigint, <span class="hljs-attr">x1</span>:bigint) : bigint {
+<pre><code class="language-ts">  <span class="hljs-comment">// Non-public methods are internal and can only be called from</span>
+  <span class="hljs-comment">// within the contract</span>
+  <span class="hljs-meta">@method</span>()
+  <span class="hljs-title function_">add</span>(<span class="hljs-attr">x0</span>: <span class="hljs-built_in">bigint</span>, <span class="hljs-attr">x1</span>:<span class="hljs-built_in">bigint</span>) : <span class="hljs-built_in">bigint</span> {
     <span class="hljs-keyword">return</span> x0 + x1;
   }
+ 
+  <span class="hljs-comment">// Public methods can be called from the unlocking transaction.</span>
+  <span class="hljs-meta">@method</span>()
+  <span class="hljs-keyword">public</span> <span class="hljs-title function_">unlock</span>(<span class="hljs-params">x: <span class="hljs-built_in">bigint</span></span>) {  <span class="hljs-comment">// Value of x is passed via unlocking script</span>
+    <span class="hljs-title function_">assert</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-title function_">add</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">x</span>, <span class="hljs-number">1n</span>) === x);
+  }
+
+  <span class="hljs-comment">// Functions without the "@method" decorator are just regular TS</span>
+  <span class="hljs-comment">// functions. They aren&#x27;t included in the smart contract code and</span>
+  <span class="hljs-comment">// can&#x27;t be called from a smart contract method.</span>
+  <span class="hljs-title function_">getContractName</span>() : <span class="hljs-built_in">string</span> {
+    <span class="hljs-keyword">return</span> <span class="hljs-string">"ExampleContract"</span> 
+  }
 </code></pre>
-<p>Note: Recursion is disallowed. Both <strong>Non-Public Methods</strong> and <strong>Public Methods</strong> cannot call themselves in their body, either directly or indirectly.</p>
 `
 
 export default html

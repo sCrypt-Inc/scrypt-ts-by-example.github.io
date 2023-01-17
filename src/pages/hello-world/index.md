@@ -10,7 +10,6 @@ In a Bitcoin context this means, that we need to include an integer `y` in the u
 
 ```typescript
 class Demo extends SmartContract {
-
   @prop()
   x: bigint
 
@@ -23,6 +22,5 @@ class Demo extends SmartContract {
   public equals(y: bigint) {
     assert(this.x == y, "x doesn't equal y")
   }
-
 }
 ```
