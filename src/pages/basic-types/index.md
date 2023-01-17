@@ -11,11 +11,11 @@ A `string` literal is not allowed to be used directly without being converted in
 ```ts
 @method()
 public example(x: bigint, y: ByteString, z: boolean) {
-    assert(x == 5n);
-    assert(z);
+    assert(x == 5n)
+    assert(z)
     // Strings must by converted to ByteString before being used
     // in a smart contract:
-    assert(y == utf8ToByteString("hello world!"));
+    assert(y == utf8ToByteString("hello world!"))
 }
 ```
 
@@ -31,5 +31,5 @@ let item = arr[idx]
 - An induction variable in `for` statement
 
 ```ts
-for(let i: number =0; i < 5; i++) …
+for(let i: number = 0; i < 5; i++) …
 ```

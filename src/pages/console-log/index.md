@@ -9,8 +9,8 @@ description: Built-in functions in scryptTS
 ```ts
 @method()
 add(x0: bigint, x1:bigint) : bigint {
-  console.log(x0);
-  return x0 + x1;
+  console.log(x0)
+  return x0 + x1
 }
 ```
 
