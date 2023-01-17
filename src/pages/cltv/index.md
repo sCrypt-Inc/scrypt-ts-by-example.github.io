@@ -9,7 +9,7 @@ We can write smart contracts that can only be unlocked after a certain amount of
 ```ts
 class CheckLockTimeVerify extends SmartContract {
   @prop()
-  matureTime: bigint // Can be timestamp or block height.
+  matureTime: bigint
 
   constructor(matureTime: bigint) {
     super(matureTime)
@@ -18,15 +18,9 @@ class CheckLockTimeVerify extends SmartContract {
 
   @method()
   public unlock() {
-    // Ensure nSequence is less than UINT_MAX.
-    assert(this.ctx.nSequence < 4294967295n, "nSequence must be less than UINT_MAX")
+    ...
 
-    // Check if using block height.
-    if (this.matureTime < 500000000n) {
-      // Enforce nLocktime field to also use block height.
-      assert(this.ctx.nLocktime < 500000000n, "nLocktime too low")
-    }
-    assert(this.ctx.nLocktime >= this.matureTime, "nLocktime too low")
+    assert(this.ctx.locktime >= this.matureTime, "locktime too low")
   }
 }
 ```
