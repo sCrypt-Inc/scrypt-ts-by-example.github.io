@@ -34,6 +34,10 @@ const SOL_ROUTES: Route[] = [
     title: "Basic Types",
   },
   {
+    path: "number-type",
+    title: "Number Type",
+  },
+  {
     path: "array-types",
     title: "Array Types",
   },

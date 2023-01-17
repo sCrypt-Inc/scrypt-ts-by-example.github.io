@@ -12,6 +12,7 @@ import component_for_loop from "./pages/for-loop"
 import component_hash_puzzle from "./pages/hash-puzzle"
 import component_hello_world from "./pages/hello-world"
 import component_methods from "./pages/methods"
+import component_number_type from "./pages/number-type"
 import component_operators from "./pages/operators"
 import component_p2pkh from "./pages/p2pkh"
 import component_properties from "./pages/properties"
@@ -96,6 +97,10 @@ const routes: Route[] = [
   {
     path: "/methods",
     component: component_methods,
+  },
+  {
+    path: "/number-type",
+    component: component_number_type,
   },
   {
     path: "/operators",
