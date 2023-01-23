@@ -17,6 +17,9 @@ const html = `<p>The <code>number</code> type is not allowed in <code>@prop</cod
 <span class="hljs-keyword">let</span> <span class="hljs-attr">end</span>: <span class="hljs-built_in">bigint</span> = <span class="hljs-number">1n</span>
 b.<span class="hljs-title function_">slice</span>(<span class="hljs-number">0</span>, <span class="hljs-title class_">Number</span>(end))
 </code></pre>
+<p>You can also convert <code>number</code> types into <code>bigint</code>:</p>
+<pre><code class="language-ts"><span class="hljs-keyword">let</span> <span class="hljs-attr">x</span>: <span class="hljs-built_in">bigint</span> = <span class="hljs-title class_">BigInt</span>(<span class="hljs-number">10</span>)
+</code></pre>
 `
 
 export default html

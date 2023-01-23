@@ -20,3 +20,9 @@ let b: ByteString = reverseBytes(toByteString("001122"), Number(size))
 let end: bigint = 1n
 b.slice(0, Number(end))
 ```
+
+You can also convert `number` types into `bigint`:
+
+```ts
+let x: bigint = BigInt(10)
+```

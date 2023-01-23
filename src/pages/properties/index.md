@@ -22,6 +22,10 @@ class Example extends SmartContract {
   @prop(true)
   y: bigint
 
+  // The value of z is a compile-time constant.
+  @prop()
+  static readonly z: bigint = 5n
+
   //...
 }
 ```
