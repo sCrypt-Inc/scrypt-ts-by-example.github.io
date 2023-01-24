@@ -13,6 +13,8 @@ const html = `<p>Basic types allowed to be used in <code>@prop</code>s and <code
     <span class="hljs-comment">// Strings must by converted to ByteString before being used</span>
     <span class="hljs-comment">// in a smart contract:</span>
     <span class="hljs-title function_">assert</span>(y == <span class="hljs-title function_">utf8ToByteString</span>(<span class="hljs-string">"hello world!"</span>))
+    <span class="hljs-comment">// We can also parse hex strings:</span>
+    <span class="hljs-title function_">assert</span>(x == <span class="hljs-title function_">unpack</span>(<span class="hljs-title function_">toByteString</span>(<span class="hljs-string">&#x27;05&#x27;</span>)))
 }
 </code></pre>
 <p>Compile time constants can also be of type <code>number</code>:</p>

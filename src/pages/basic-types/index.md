@@ -16,6 +16,8 @@ public example(x: bigint, y: ByteString, z: boolean) {
     // Strings must by converted to ByteString before being used
     // in a smart contract:
     assert(y == utf8ToByteString("hello world!"))
+    // We can also parse hex strings:
+    assert(x == unpack(toByteString('05')))
 }
 ```
 

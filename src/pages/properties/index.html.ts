@@ -18,7 +18,7 @@ const html = `<p>Mark smart contract properties with the <code>@prop</code> deco
   <span class="hljs-comment">// The value of "y" on the other hand can be changed.</span>
   <span class="hljs-meta">@prop</span>(<span class="hljs-literal">true</span>)
   <span class="hljs-attr">y</span>: <span class="hljs-built_in">bigint</span>
-  
+
   <span class="hljs-comment">// The value of z is a compile-time constant.</span>
   <span class="hljs-meta">@prop</span>()
   <span class="hljs-keyword">static</span> <span class="hljs-keyword">readonly</span> <span class="hljs-attr">z</span>: <span class="hljs-built_in">bigint</span> = <span class="hljs-number">5n</span>
