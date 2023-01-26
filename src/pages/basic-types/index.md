@@ -11,13 +11,25 @@ A `string` literal is not allowed to be used directly without being converted in
 ```ts
 @method()
 public example(x: bigint, y: ByteString, z: boolean) {
+
     assert(x == 5n)
+
     assert(z)
+
     // Strings must by converted to ByteString before being used
     // in a smart contract:
     assert(y == utf8ToByteString("hello world!"))
+
     // We can also parse hex strings:
     assert(x == unpack(toByteString('05')))
+
+    // Vice versa, we can turn integers into ByteStrings:
+    assert(pack(x) == toByteString('05'))
+
+    // Little-endian signed-magnitude representation is being used:
+    assert(pack(-x) == toByteString('85'))
+    assert(pack(-x * 1000n) == toByteString('8893'))
+
 }
 ```
 
