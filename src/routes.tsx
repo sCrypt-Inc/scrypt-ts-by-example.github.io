@@ -9,7 +9,6 @@ import component_constructor from "./pages/constructor"
 import component_domain_types from "./pages/domain-types"
 import component_ecdsa_oracle from "./pages/ecdsa-oracle"
 import component_for_loop from "./pages/for-loop"
-import component_fractions from "./pages/fractions"
 import component_hash_puzzle from "./pages/hash-puzzle"
 import component_hello_world from "./pages/hello-world"
 import component_methods from "./pages/methods"
@@ -86,10 +85,6 @@ const routes: Route[] = [
   {
     path: "/for-loop",
     component: component_for_loop,
-  },
-  {
-    path: "/fractions",
-    component: component_fractions,
   },
   {
     path: "/hash-puzzle",
