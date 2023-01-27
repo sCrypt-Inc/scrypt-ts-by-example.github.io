@@ -19,14 +19,14 @@ const html = `<p>Basic types allowed to be used in <code>@prop</code>s and <code
 
     <span class="hljs-comment">// We can also parse hex strings:</span>
     <span class="hljs-title function_">assert</span>(x == <span class="hljs-title function_">unpack</span>(<span class="hljs-title function_">toByteString</span>(<span class="hljs-string">&#x27;05&#x27;</span>)))
-    
+
     <span class="hljs-comment">// Vice versa, we can turn integers into ByteStrings:</span>
     <span class="hljs-title function_">assert</span>(<span class="hljs-title function_">pack</span>(x) == <span class="hljs-title function_">toByteString</span>(<span class="hljs-string">&#x27;05&#x27;</span>))
-    
+
     <span class="hljs-comment">// Little-endian signed-magnitude representation is being used:</span>
     <span class="hljs-title function_">assert</span>(<span class="hljs-title function_">pack</span>(-x) == <span class="hljs-title function_">toByteString</span>(<span class="hljs-string">&#x27;85&#x27;</span>))
     <span class="hljs-title function_">assert</span>(<span class="hljs-title function_">pack</span>(-x * <span class="hljs-number">1000n</span>) == <span class="hljs-title function_">toByteString</span>(<span class="hljs-string">&#x27;8893&#x27;</span>))
-    
+
 }
 </code></pre>
 <p>Compile time constants can also be of type <code>number</code>:</p>
