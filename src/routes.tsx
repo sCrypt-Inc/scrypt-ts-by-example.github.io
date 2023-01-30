@@ -1,6 +1,7 @@
 import component_array_types from "./pages/array-types"
 import component_auction from "./pages/auction"
 import component_basic_types from "./pages/basic-types"
+import component_blocktime_bet from "./pages/blocktime-bet"
 import component_builtin_functions from "./pages/builtin-functions"
 import component_cltv from "./pages/cltv"
 import component_coin_toss from "./pages/coin-toss"
@@ -53,6 +54,10 @@ const routes: Route[] = [
   {
     path: "/basic-types",
     component: component_basic_types,
+  },
+  {
+    path: "/blocktime-bet",
+    component: component_blocktime_bet,
   },
   {
     path: "/builtin-functions",

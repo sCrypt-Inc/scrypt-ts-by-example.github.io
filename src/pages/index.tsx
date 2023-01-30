@@ -108,6 +108,10 @@ const APP_ROUTES: Route[] = [
     path: "cltv",
     title: "CLTV (Time-lock)",
   },
+  {
+    path: "blocktime-bet",
+    title: "Block-Time Bet",
+  },
 ]
 
 const HACK_ROUTES: Route[] = []
