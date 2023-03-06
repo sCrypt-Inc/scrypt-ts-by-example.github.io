@@ -7,6 +7,7 @@ import component_cltv from "./pages/cltv"
 import component_coin_toss from "./pages/coin-toss"
 import component_console_log from "./pages/console-log"
 import component_constructor from "./pages/constructor"
+import component_deploy_and_call from "./pages/deploy-and-call"
 import component_domain_types from "./pages/domain-types"
 import component_ecdsa_oracle from "./pages/ecdsa-oracle"
 import component_for_loop from "./pages/for-loop"
@@ -78,6 +79,10 @@ const routes: Route[] = [
   {
     path: "/constructor",
     component: component_constructor,
+  },
+  {
+    path: "/deploy-and-call",
+    component: component_deploy_and_call,
   },
   {
     path: "/domain-types",

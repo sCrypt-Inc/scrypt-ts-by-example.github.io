@@ -8,7 +8,7 @@ interface Route {
   title: string
 }
 
-const SOL_ROUTES: Route[] = [
+const SCRYPT_ROUTES: Route[] = [
   {
     path: "hello-world",
     title: "Hello World",
@@ -114,14 +114,19 @@ const APP_ROUTES: Route[] = [
   },
 ]
 
-const HACK_ROUTES: Route[] = []
+const DEPLOY_ROUTES: Route[] = [
+  {
+    path: "deploy-and-call",
+    title: "Deploy and Call a Contract",
+  },
+]
 
 const DEFI_ROUTES = []
 
 export const ROUTES_BY_CATEGORY = [
   {
     title: "",
-    routes: SOL_ROUTES,
+    routes: SCRYPT_ROUTES,
   },
   {
     title: "Applications",
@@ -131,13 +136,10 @@ export const ROUTES_BY_CATEGORY = [
     //  path: `/app/${route.path}`,
     //})),
   },
-  //{
-  //  title: "Hacks",
-  //  routes: HACK_ROUTES.map((route) => ({
-  //    ...route,
-  //    path: `/hacks/${route.path}`,
-  //  })),
-  //},
+  {
+    title: "Deployment",
+    routes: DEPLOY_ROUTES,
+  },
   //{
   //  title: "DeFi",
   //  routes: DEFI_ROUTES.map((route) => ({
