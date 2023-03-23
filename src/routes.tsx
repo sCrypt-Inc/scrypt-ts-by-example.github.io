@@ -12,6 +12,8 @@ import component_domain_types from "./pages/domain-types"
 import component_ecdsa_oracle from "./pages/ecdsa-oracle"
 import component_for_loop from "./pages/for-loop"
 import component_hash_puzzle from "./pages/hash-puzzle"
+import component_hashed_map from "./pages/hashed-map"
+import component_hashed_set from "./pages/hashed-set"
 import component_hello_world from "./pages/hello-world"
 import component_methods from "./pages/methods"
 import component_number_type from "./pages/number-type"
@@ -99,6 +101,14 @@ const routes: Route[] = [
   {
     path: "/hash-puzzle",
     component: component_hash_puzzle,
+  },
+  {
+    path: "/hashed-map",
+    component: component_hashed_map,
+  },
+  {
+    path: "/hashed-set",
+    component: component_hashed_set,
   },
   {
     path: "/hello-world",

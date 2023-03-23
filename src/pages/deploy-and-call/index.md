@@ -23,7 +23,6 @@ Create a file named `deploy.ts` in the root of the project with the following co
 import { Demo } from "./src/contracts/demo"
 import { getDefaultSigner, inputSatoshis } from "./tests/testnet/utils/txHelper"
 import { toByteString, sha256 } from "scrypt-ts"
-
 ;(async () => {
   const message = toByteString("hello world", true)
 

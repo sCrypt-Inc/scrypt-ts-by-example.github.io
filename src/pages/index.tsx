@@ -77,6 +77,14 @@ const SCRYPT_ROUTES: Route[] = [
     path: "state",
     title: "State",
   },
+  {
+    path: "hashed-map",
+    title: "HashedMap",
+  },
+  {
+    path: "hashed-set",
+    title: "HashedSet",
+  },
 ]
 
 const APP_ROUTES: Route[] = [
