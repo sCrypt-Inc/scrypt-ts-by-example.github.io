@@ -20,4 +20,9 @@ let abb: FixedArray<FixedArray<bigint, 2>, 3> = [
   [1n, 3n],
   [1n, 3n],
 ]
+
+// Fill:
+let zeroArr = fill(0n, 3)     // = [0n, 0n, 0n]
+const M = 3                   // Length must be a compile time constant
+let falseArr = fill(false, M) 
 ```

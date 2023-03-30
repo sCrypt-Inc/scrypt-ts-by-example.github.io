@@ -15,7 +15,6 @@ const html = `<p>Make sure you have the sCrypt CLI tool installed:</p>
 <pre><code class="language-ts"><span class="hljs-keyword">import</span> { <span class="hljs-title class_">Demo</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">"./src/contracts/demo"</span>
 <span class="hljs-keyword">import</span> { getDefaultSigner, inputSatoshis } <span class="hljs-keyword">from</span> <span class="hljs-string">"./tests/testnet/utils/txHelper"</span>
 <span class="hljs-keyword">import</span> { toByteString, sha256 } <span class="hljs-keyword">from</span> <span class="hljs-string">"scrypt-ts"</span>
-
 ;(<span class="hljs-keyword">async</span> () =&gt; {
   <span class="hljs-keyword">const</span> message = <span class="hljs-title function_">toByteString</span>(<span class="hljs-string">"hello world"</span>, <span class="hljs-literal">true</span>)
 

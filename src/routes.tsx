@@ -46,126 +46,126 @@ interface Route {
 }
 
 const routes: Route[] = [
-  {
-    path: "/array-types",
-    component: component_array_types,
-  },
-  {
-    path: "/auction",
-    component: component_auction,
-  },
-  {
-    path: "/basic-types",
-    component: component_basic_types,
-  },
-  {
-    path: "/blocktime-bet",
-    component: component_blocktime_bet,
-  },
-  {
-    path: "/builtin-functions",
-    component: component_builtin_functions,
-  },
-  {
-    path: "/cltv",
-    component: component_cltv,
-  },
-  {
-    path: "/coin-toss",
-    component: component_coin_toss,
-  },
-  {
-    path: "/console-log",
-    component: component_console_log,
-  },
-  {
-    path: "/constructor",
-    component: component_constructor,
-  },
-  {
-    path: "/deploy-and-call",
-    component: component_deploy_and_call,
-  },
-  {
-    path: "/domain-types",
-    component: component_domain_types,
-  },
-  {
-    path: "/ecdsa-oracle",
-    component: component_ecdsa_oracle,
-  },
-  {
-    path: "/for-loop",
-    component: component_for_loop,
-  },
-  {
-    path: "/hash-puzzle",
-    component: component_hash_puzzle,
-  },
-  {
-    path: "/hashed-map",
-    component: component_hashed_map,
-  },
-  {
-    path: "/hashed-set",
-    component: component_hashed_set,
-  },
-  {
-    path: "/hello-world",
-    component: component_hello_world,
-  },
-  {
-    path: "/methods",
-    component: component_methods,
-  },
-  {
-    path: "/number-type",
-    component: component_number_type,
-  },
-  {
-    path: "/operators",
-    component: component_operators,
-  },
-  {
-    path: "/p2pkh",
-    component: component_p2pkh,
-  },
-  {
-    path: "/properties",
-    component: component_properties,
-  },
-  {
-    path: "/rabin-signature",
-    component: component_rabin_signature,
-  },
-  {
-    path: "/return",
-    component: component_return,
-  },
-  {
-    path: "/script-context",
-    component: component_script_context,
-  },
-  {
-    path: "/state",
-    component: component_state,
-  },
-  {
-    path: "/tic-tac-toe",
-    component: component_tic_tac_toe,
-  },
-  {
-    path: "/user-defined-types",
-    component: component_user_defined_types,
-  },
-  {
-    path: "/variable-declarations",
-    component: component_variable_declarations,
-  },
-  {
-    path: "",
-    component: component_,
-  },
+    {
+        path: "/array-types",
+        component: component_array_types
+    },
+    {
+        path: "/auction",
+        component: component_auction
+    },
+    {
+        path: "/basic-types",
+        component: component_basic_types
+    },
+    {
+        path: "/blocktime-bet",
+        component: component_blocktime_bet
+    },
+    {
+        path: "/builtin-functions",
+        component: component_builtin_functions
+    },
+    {
+        path: "/cltv",
+        component: component_cltv
+    },
+    {
+        path: "/coin-toss",
+        component: component_coin_toss
+    },
+    {
+        path: "/console-log",
+        component: component_console_log
+    },
+    {
+        path: "/constructor",
+        component: component_constructor
+    },
+    {
+        path: "/deploy-and-call",
+        component: component_deploy_and_call
+    },
+    {
+        path: "/domain-types",
+        component: component_domain_types
+    },
+    {
+        path: "/ecdsa-oracle",
+        component: component_ecdsa_oracle
+    },
+    {
+        path: "/for-loop",
+        component: component_for_loop
+    },
+    {
+        path: "/hash-puzzle",
+        component: component_hash_puzzle
+    },
+    {
+        path: "/hashed-map",
+        component: component_hashed_map
+    },
+    {
+        path: "/hashed-set",
+        component: component_hashed_set
+    },
+    {
+        path: "/hello-world",
+        component: component_hello_world
+    },
+    {
+        path: "/methods",
+        component: component_methods
+    },
+    {
+        path: "/number-type",
+        component: component_number_type
+    },
+    {
+        path: "/operators",
+        component: component_operators
+    },
+    {
+        path: "/p2pkh",
+        component: component_p2pkh
+    },
+    {
+        path: "/properties",
+        component: component_properties
+    },
+    {
+        path: "/rabin-signature",
+        component: component_rabin_signature
+    },
+    {
+        path: "/return",
+        component: component_return
+    },
+    {
+        path: "/script-context",
+        component: component_script_context
+    },
+    {
+        path: "/state",
+        component: component_state
+    },
+    {
+        path: "/tic-tac-toe",
+        component: component_tic_tac_toe
+    },
+    {
+        path: "/user-defined-types",
+        component: component_user_defined_types
+    },
+    {
+        path: "/variable-declarations",
+        component: component_variable_declarations
+    },
+    {
+        path: "",
+        component: component_
+    },
 ]
 
 export default routes
