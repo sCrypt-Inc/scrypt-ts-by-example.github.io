@@ -93,6 +93,10 @@ const APP_ROUTES: Route[] = [
     title: "Pay to Public Key Hash (P2PKH)",
   },
   {
+    path: "multisig",
+    title: "Multi-Sig Payment",
+  },
+  {
     path: "hash-puzzle",
     title: "Hash Puzzle",
   },

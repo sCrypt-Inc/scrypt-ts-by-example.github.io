@@ -1,7 +1,7 @@
 ---
-title: Multi-sig Payment
+title: Multi-Sig Payment
 version: 0.1.0
-description: Multi-sig payment in scryptTS
+description: Multi-Sig payment in scryptTS
 ---
 
 A multi-sig payment contract is used to send funds to a group of Bitcoin addresses. It employs the checkMultiSig function, which distinguishes itself from the checkSig function by accepting an array of signature-public key pairs rather than just one pair. Each signature must be valid.
