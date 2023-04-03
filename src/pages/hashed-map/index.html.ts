@@ -55,7 +55,7 @@ const html = `<p>The <code>HashedMap</code> library provides a map/hashtable-lik
   }
 }
 
-(<span class="hljs-keyword">async</span> () =&gt; {
+;(<span class="hljs-keyword">async</span> () =&gt; {
   <span class="hljs-keyword">await</span> <span class="hljs-title class_">HashedMapDemo</span>.<span class="hljs-title function_">compile</span>()
 
   <span class="hljs-keyword">const</span> <span class="hljs-attr">map</span>: <span class="hljs-title class_">MyMap</span> = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashedMap</span>&lt;<span class="hljs-built_in">bigint</span>, <span class="hljs-title class_">ByteString</span>&gt;()

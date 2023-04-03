@@ -19,9 +19,9 @@ const html = `<p>The common array types in TypeScript like <code>T[]</code> or <
 ]
 
 <span class="hljs-comment">// Fill:</span>
-<span class="hljs-keyword">let</span> zeroArr = <span class="hljs-title function_">fill</span>(<span class="hljs-number">0n</span>, <span class="hljs-number">3</span>)     <span class="hljs-comment">// = [0n, 0n, 0n]</span>
-<span class="hljs-keyword">const</span> M = <span class="hljs-number">3</span>                   <span class="hljs-comment">// Length must be a compile time constant</span>
-<span class="hljs-keyword">let</span> falseArr = <span class="hljs-title function_">fill</span>(<span class="hljs-literal">false</span>, M) 
+<span class="hljs-keyword">let</span> zeroArr = <span class="hljs-title function_">fill</span>(<span class="hljs-number">0n</span>, <span class="hljs-number">3</span>) <span class="hljs-comment">// = [0n, 0n, 0n]</span>
+<span class="hljs-keyword">const</span> M = <span class="hljs-number">3</span> <span class="hljs-comment">// Length must be a compile time constant</span>
+<span class="hljs-keyword">let</span> falseArr = <span class="hljs-title function_">fill</span>(<span class="hljs-literal">false</span>, M)
 </code></pre>
 `
 

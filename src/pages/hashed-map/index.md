@@ -57,7 +57,7 @@ export class HashedMapDemo extends SmartContract {
   }
 }
 
-(async () => {
+;(async () => {
   await HashedMapDemo.compile()
 
   const map: MyMap = new HashedMap<bigint, ByteString>()

@@ -22,7 +22,7 @@ let abb: FixedArray<FixedArray<bigint, 2>, 3> = [
 ]
 
 // Fill:
-let zeroArr = fill(0n, 3)     // = [0n, 0n, 0n]
-const M = 3                   // Length must be a compile time constant
-let falseArr = fill(false, M) 
+let zeroArr = fill(0n, 3) // = [0n, 0n, 0n]
+const M = 3 // Length must be a compile time constant
+let falseArr = fill(false, M)
 ```
