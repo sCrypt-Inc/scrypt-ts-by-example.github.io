@@ -78,6 +78,10 @@ const SCRYPT_ROUTES: Route[] = [
     title: "State",
   },
   {
+    path: "enforce-p2pkh",
+    title: "Enforce P2PKH Output",
+  },
+  {
     path: "hashed-map",
     title: "HashedMap",
   },

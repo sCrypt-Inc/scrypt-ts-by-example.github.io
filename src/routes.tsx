@@ -10,6 +10,7 @@ import component_constructor from "./pages/constructor"
 import component_deploy_and_call from "./pages/deploy-and-call"
 import component_domain_types from "./pages/domain-types"
 import component_ecdsa_oracle from "./pages/ecdsa-oracle"
+import component_enforce_p2pkh from "./pages/enforce-p2pkh"
 import component_for_loop from "./pages/for-loop"
 import component_hash_puzzle from "./pages/hash-puzzle"
 import component_hashed_map from "./pages/hashed-map"
@@ -94,6 +95,10 @@ const routes: Route[] = [
   {
     path: "/ecdsa-oracle",
     component: component_ecdsa_oracle,
+  },
+  {
+    path: "/enforce-p2pkh",
+    component: component_enforce_p2pkh,
   },
   {
     path: "/for-loop",
