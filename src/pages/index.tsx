@@ -208,8 +208,7 @@ export default function HomePage() {
       <div className={styles.subHeader}></div>
       <div className={styles.main}>
         <p>
-          An introduction to{" "}
-          <a href="https://docs.scrypt.io/">sCrypt</a> with simple
+          An introduction to <a href="https://docs.scrypt.io/">sCrypt</a> with simple
           examples.
         </p>
 
