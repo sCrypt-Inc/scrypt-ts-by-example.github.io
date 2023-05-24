@@ -1,11 +1,10 @@
 // metadata
 export const version = "0.1.0"
-export const title = "Enforce P2PKH Output"
-export const description =
-  "Build and enforce a custom output via an sCrypt smart contact"
+export const title = "Enforce Recipients"
+export const description = "Build and enforce a P2PKH output via an sCrypt smart contact"
 export const replitLink = ""
 
-const html = `<p>A smart contract can enforce a payment to a specific address. For example, the contract can check some arbitrary condition and based in the result it pays either Alice or Bob:</p>
+const html = `<p>A smart contract can restrict a payment to be destined to a specific address. For example, the contract can check some arbitrary condition and based in the result it pays either Alice or Bob:</p>
 <pre><code class="language-ts"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Bet</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">SmartContract</span> {
 
   <span class="hljs-meta">@prop</span>()
@@ -40,8 +39,8 @@ const html = `<p>A smart contract can enforce a payment to a specific address. F
   }
 }
 </code></pre>
-<p>As a matter of fact, using the <a href="https://docs.scrypt.io/reference/classes/Utils/#buildoutput"><code>buildOutput</code></a> you could define any type of output you like, not only P2PKH.</p>
-<p>Note, that in order to unlock this contract you will also need to bind a custom transaction builder, that will create a transaction with the correct output. See <a href="https://docs.scrypt.io/how-to-deploy-and-call-a-contract/how-to-customize-a-contract-tx#call-tx">this page</a> for more details.</p>
+<p>As a matter of fact, using the <a href="https://docs.scrypt.io/reference/classes/Utils/#buildoutput"><code>buildOutput</code></a> we could define any type of output we like, not only P2PKH.</p>
+<p>Note, that in order to unlock this contract we will also need to bind a custom transaction builder, that will create a transaction with the correct output. See <a href="https://docs.scrypt.io/how-to-deploy-and-call-a-contract/how-to-customize-a-contract-tx#call-tx">this page</a> for more details.</p>
 `
 
 export default html

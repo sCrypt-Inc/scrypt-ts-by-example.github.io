@@ -78,8 +78,12 @@ const SCRYPT_ROUTES: Route[] = [
     title: "State",
   },
   {
-    path: "enforce-p2pkh",
-    title: "Enforce P2PKH Output",
+    path: "enforce-recipient",
+    title: "Enforce Recipient",
+  },
+  {
+    path: "enforce-op-return",
+    title: "Enforce OP_RETURN Outputs",
   },
   {
     path: "hashed-map",
@@ -195,17 +199,17 @@ export default function HomePage() {
   return (
     <div className={styles.component}>
       <SEO
-        title="scryptTS by Example"
-        description="Learn smart contract programming using scryptTS"
+        title="sCrypt by Example"
+        description="Learn smart contract programming using sCrypt"
       />
       <h1 className={styles.header}>
-        <a href="/">scryptTS by Example</a>
+        <a href="/">sCrypt by Example</a>
       </h1>
       <div className={styles.subHeader}></div>
       <div className={styles.main}>
         <p>
           An introduction to{" "}
-          <a href="https://scrypt.io/scrypt-ts/overview/">scryptTS</a> with simple
+          <a href="https://docs.scrypt.io/">sCrypt</a> with simple
           examples.
         </p>
 
@@ -215,7 +219,7 @@ export default function HomePage() {
             href="https://www.youtube.com/playlist?list=PL0Kn1t30VSpGcbwN-bcbU1-x0fRAoq-GI"
             target="__blank"
           >
-            Learning scryptTS video playlist.
+            Learning sCrypt video playlist.
           </a>
         </div>
 

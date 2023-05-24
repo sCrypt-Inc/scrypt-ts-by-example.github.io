@@ -23,7 +23,7 @@ function Header() {
       </a>
 
       <h3 className={styles.header}>
-        <a href="/">scryptTS by Example</a>
+        <a href="/">sCrypt by Example</a>
 
         <div className={styles.versions}>
           <div className={styles.version}></div>

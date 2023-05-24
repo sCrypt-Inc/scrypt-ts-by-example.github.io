@@ -1,10 +1,10 @@
 ---
-title: Enforce P2PKH Output
+title: Enforce Recipients
 version: 0.1.0
-description: Build and enforce a custom output via an sCrypt smart contact
+description: Build and enforce a P2PKH output via an sCrypt smart contact
 ---
 
-A smart contract can enforce a payment to a specific address. For example, the contract can check some arbitrary condition and based in the result it pays either Alice or Bob:
+A smart contract can restrict a payment to be destined to a specific address. For example, the contract can check some arbitrary condition and based in the result it pays either Alice or Bob:
 
 ```ts
 class Bet extends SmartContract {
@@ -42,6 +42,6 @@ class Bet extends SmartContract {
 }
 ```
 
-As a matter of fact, using the [`buildOutput`](https://docs.scrypt.io/reference/classes/Utils/#buildoutput) you could define any type of output you like, not only P2PKH.
+As a matter of fact, using the [`buildOutput`](https://docs.scrypt.io/reference/classes/Utils/#buildoutput) we could define any type of output we like, not only P2PKH.
 
-Note, that in order to unlock this contract you will also need to bind a custom transaction builder, that will create a transaction with the correct output. See [this page](https://docs.scrypt.io/how-to-deploy-and-call-a-contract/how-to-customize-a-contract-tx#call-tx) for more details.
+Note, that in order to unlock this contract we will also need to bind a custom transaction builder, that will create a transaction with the correct output. See [this page](https://docs.scrypt.io/how-to-deploy-and-call-a-contract/how-to-customize-a-contract-tx#call-tx) for more details.
