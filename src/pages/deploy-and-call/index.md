@@ -10,44 +10,81 @@ Make sure you have the sCrypt CLI tool installed:
 npm install -g scrypt-cli
 ```
 
-Create a demo project:
+Create a demo project and install its dependencies:
 
 ```sh
 scrypt project demo && \
-cd demo/
+cd demo/ && npm i
 ```
 
-Create a file named `deploy.ts` in the root of the project with the following content:
+Run the following command to generate a testnet address and fund it using the [sCrypt faucet](https://scrypt.io/faucet):
+
+```sh
+npm run genprivkey
+```
+
+Now simply run the CLI's `deploy` command in the root of the project to deploy the contract:
+
+```sh
+scrypt deploy
+```
+
+Under the hood this executes the file named `deploy.ts`. For further deployments, you can adjust it to your needs.
+
+Now, that we have deployed our smart contract, we can also call one of its methods. Create a file named `call.ts`:
 
 ```ts
 import { Demo } from "./src/contracts/demo"
-import { getDefaultSigner, inputSatoshis } from "./tests/testnet/utils/txHelper"
-import { toByteString, sha256 } from "scrypt-ts"
-;(async () => {
-  const message = toByteString("hello world", true)
+import { toByteString, DefaultProvider, bsv, TestWallet } from "scrypt-ts"
+import * as dotenv from "dotenv"
 
+// Load the .env file
+dotenv.config()
+
+// Read the private key from the .env file.
+// The default private key inside the .env file is meant to be used for the Bitcoin testnet.
+// See https://scrypt.io/docs/bitcoin-basics/bsv/#private-keys
+const privateKey = bsv.PrivateKey.fromWIF(process.env.PRIVATE_KEY || "")
+
+// Prepare signer.
+// See https://scrypt.io/docs/how-to-deploy-and-call-a-contract/#prepare-a-signer-and-provider
+const provider = new DefaultProvider({
+  network: bsv.Networks.testnet,
+})
+const signer = new TestWallet(privateKey, provider)
+
+async function main() {
   await Demo.compile()
-  const instance = new Demo(sha256(message))
 
-  // connect to a signer
-  await instance.connect(getDefaultSigner())
+  // Fetch tx of deployed contract and reconstruct contract instance.
+  // TODO: Adjust TXID:
+  const tx = await provider.getTransaction(
+    "dac4122c585e3f72d2f839417871286f6048e9ff110254d340fd2767ccc18d08"
+  )
+  const instance = Demo.fromTx(tx, 0)
 
-  // contract deployment
-  const deployTx = await instance.deploy(inputSatoshis)
-  console.log("Demo contract deployed: ", deployTx.id)
+  // We need to connect a signer in order to call the contracts method.
+  instance.connect(signer)
 
-  // contract call
+  // Contract call. Adjust message value if needed.
+  const message = toByteString("hello world", true)
   const { tx: callTx } = await instance.methods.unlock(message)
   console.log('Demo contract "unlock" called: ', callTx.id)
-})()
+}
+
+main()
 ```
+
+Inside the file adjust the transaction ID of your deployed contract and also the message, if you already modified `deploy.ts`.
 
 Now run the file:
 
 ```sh
-npx ts-node deploy.ts
+npx ts-node call.ts
 ```
 
-At first it will probably ask you to fund a generated address with some testnet coin. Go ahead and get some via [the sCrypt faucet](https://scrypt.io/#faucet) and run the command once again.
+If successful, the script will output something like the following:
 
-The script will first deploy the contract on the Bitcoin testnet and then call its public method named `unlock`.
+```sh
+Demo contract "unlock" called:  759e318c1b1fc0ccc78ef0eb913fb9ef94895731e11b0fb4114adb53007dcd72
+```
