@@ -125,8 +125,8 @@ const APP_ROUTES: Route[] = [
     title: "Tic-Tac-Toe",
   },
   {
-    path: "cltv",
-    title: "CLTV (Time-lock)",
+    path: "time-lock",
+    title: "Time Lock",
   },
   {
     path: "blocktime-bet",
