@@ -93,6 +93,10 @@ const SCRYPT_ROUTES: Route[] = [
     path: "hashed-set",
     title: "HashedSet",
   },
+  {
+    path: "on-vs-off-chain",
+    title: "On-Chain vs Off-Chain Types",
+  },
 ]
 
 const APP_ROUTES: Route[] = [

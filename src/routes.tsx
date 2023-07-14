@@ -20,6 +20,7 @@ import component_htlc from "./pages/htlc"
 import component_methods from "./pages/methods"
 import component_multisig from "./pages/multisig"
 import component_number_type from "./pages/number-type"
+import component_on_vs_off_chain from "./pages/on-vs-off-chain"
 import component_operators from "./pages/operators"
 import component_p2pkh from "./pages/p2pkh"
 import component_properties from "./pages/properties"
@@ -137,6 +138,10 @@ const routes: Route[] = [
     {
         path: "/number-type",
         component: component_number_type
+    },
+    {
+        path: "/on-vs-off-chain",
+        component: component_on_vs_off_chain
     },
     {
         path: "/operators",
