@@ -1,7 +1,7 @@
 // metadata
 export const version = "0.1.0"
 export const title = "Return Statement"
-export const description = "Return statement in scryptTS"
+export const description = "Return statement in sCrypt"
 export const replitLink = ""
 
 const html = `<p>Every smart contract method must end with a <code>return</code>statement. Additionally it is the only place where we can use it.</p>

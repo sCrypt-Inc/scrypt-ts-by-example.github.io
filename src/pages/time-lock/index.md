@@ -1,7 +1,7 @@
 ---
 title: Time Lock
 version: 0.1.0
-description: Time locks in scryptTS
+description: Time locks in sCrypt
 ---
 
 We can write smart contracts that, whose method(s) can only be unlocked after a certain amount of time has passed. We leverage the [nLocktime](https://wiki.bitcoinsv.io/index.php/NLocktime_and_nSequence) field of Bitcoin transactions:
@@ -26,4 +26,3 @@ class TimeLock extends SmartContract {
 ```
 
 ![](diagrams/time-lock.jpg)
-

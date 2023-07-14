@@ -1,7 +1,7 @@
 ---
 title: State
 version: 0.1.0
-description: Smart contract state in scryptTS
+description: Smart contract state in sCrypt
 ---
 
 As shown on the previous page we can put arbitrary constraints on the data of next transaction by using `this.tx`. The following is an example of a simple counter smart contract. Every iteration of the contract must contain a value `count` which is bigger by one from the previous iteration.

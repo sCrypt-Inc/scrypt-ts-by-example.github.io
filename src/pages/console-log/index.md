@@ -1,7 +1,7 @@
 ---
 title: Built-in Functions
 version: 0.1.0
-description: Built-in functions in scryptTS
+description: Built-in functions in sCrypt
 ---
 
 `console.log` can be used for debugging purposes.

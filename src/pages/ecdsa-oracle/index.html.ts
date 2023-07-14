@@ -1,7 +1,7 @@
 // metadata
 export const version = "0.1.0"
 export const title = "ECDSA-based Oracles"
-export const description = "ECDSA-base oracles in scryptTS"
+export const description = "ECDSA-base oracles in sCrypt"
 export const replitLink = ""
 
 const html = `<p><strong>P</strong> and <strong>p</strong> denote an oracle’s public and private key, respectively. We first hash the data to be signed. The result is added with <strong>p</strong>, yielding a new private key <strong>p’</strong>.</p>

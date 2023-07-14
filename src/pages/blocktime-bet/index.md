@@ -1,7 +1,7 @@
 ---
 title: BlockTime Bet
 version: 0.1.0
-description: BlockTime bet in scryptTS
+description: BlockTime bet in sCrypt
 ---
 
 By verifying Merkle proofs (read section 8 of the [Bitcoin whitepaper](https://craigwright.net/bitcoin-white-paper.pdf)) in a smart contract we can do interesting things such as betting on the time the next block will be mined. In the following smart contract Alice and Bob bet whether it will take more or less than 10 minutes to mine the next block.

@@ -1,7 +1,7 @@
 // metadata
 export const version = "0.1.0"
 export const title = "Constructor"
-export const description = "Smart contract constructors in scryptTS"
+export const description = "Smart contract constructors in sCrypt"
 export const replitLink = ""
 
 const html = `<p>A smart contract must have an explicit constructor if it has at least one <code>@prop</code>.</p>

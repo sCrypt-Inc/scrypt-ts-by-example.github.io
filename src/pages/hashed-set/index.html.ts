@@ -1,7 +1,7 @@
 // metadata
 export const version = "0.1.0"
 export const title = "HashedSet"
-export const description = "HashedSet in scryptTS"
+export const description = "HashedSet in sCrypt"
 export const replitLink = ""
 
 const html = `<p><code>HashedSet</code> can be regarded as a special <a href="/hashed-map"><code>HashedMap</code></a> where a value is the same as the key and is thus omitted. Again, only the hashes of the keys get stored on-chain.</p>

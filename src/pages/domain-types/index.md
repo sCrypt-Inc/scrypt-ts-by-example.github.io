@@ -1,7 +1,7 @@
 ---
 title: Domain Types
 version: 0.1.0
-description: Domain types in scryptTS
+description: Domain types in sCrypt
 ---
 
 There are several [domain types](https://scrypt.io/scrypt-ts/getting-started/how-to-write-a-contract#domain-types), specific to the Bitcoin context, used to further improve type safety.

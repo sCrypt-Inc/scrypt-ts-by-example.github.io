@@ -1,7 +1,7 @@
 ---
 title: ScriptContext
 version: 0.1.0
-description: ScriptContext in scryptTS
+description: ScriptContext in sCrypt
 ---
 
 `ScriptContext` allows you to put arbitrary constraints on the subsequent (unlocking) transaction (more precisely it's [hash preimage](https://github.com/bitcoin-sv/bitcoin-sv/blob/master/doc/abc/replay-protected-sighash.md#digest-algorithm)). The most common among those is propagating state through a chain of UTXOs.

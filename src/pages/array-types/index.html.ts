@@ -1,7 +1,7 @@
 // metadata
 export const version = "0.1.0"
 export const title = "Array Types"
-export const description = "Array types in scryptTS"
+export const description = "Array types in sCrypt"
 export const replitLink = ""
 
 const html = `<p>The common array types in TypeScript like <code>T[]</code> or <code>Array&lt;T&gt;</code> are not allowed to be used in <code>@prop</code>s and <code>@method</code>s.</p>

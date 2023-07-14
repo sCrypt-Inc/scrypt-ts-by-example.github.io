@@ -1,8 +1,8 @@
 // metadata
 export const version = "0.1.0"
 export const title = "Tic-Tac-Toe"
-export const description = "Tic-Tac-Toe in scryptTS"
-export const replitLink = "https://replit.com/@msinkec/scryptTS-tictactoe?embed=true"
+export const description = "Tic-Tac-Toe in sCrypt"
+export const replitLink = "https://replit.com/@msinkec/sCrypt-tictactoe?embed=true"
 
 const html = `<p>To initiate a game, Alice and Bob each lock up X amount of bitcoins into a contract UTXO. They take turns to play the game by sending signed transactions interacting with the <a href="https://scrypt.io/scrypt-ts/tutorials/stateful-contract">stateful contract</a>. If one of them wins, the winner claims the 2X bitcoins. If there is a draw, they take back their bitcoins.</p>
 <pre><code class="language-ts"><span class="hljs-keyword">class</span> <span class="hljs-title class_">TicTacToe</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">SmartContract</span> {

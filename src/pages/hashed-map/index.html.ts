@@ -1,7 +1,7 @@
 // metadata
 export const version = "0.1.0"
 export const title = "HashedMap"
-export const description = "HashedMap in scryptTS"
+export const description = "HashedMap in sCrypt"
 export const replitLink = ""
 
 const html = `<p>The <code>HashedMap</code> library provides a map/hashtable-like data structure. Unique keys and their corresponding values are hashed before being stored. Only the hashes of th key and value are stored on-chain.</p>

@@ -129,6 +129,10 @@ const APP_ROUTES: Route[] = [
     title: "Time Lock",
   },
   {
+    path: "htlc",
+    title: "Hash Time Locked Contract (HTLC)",
+  },
+  {
     path: "blocktime-bet",
     title: "Block-Time Bet",
   },

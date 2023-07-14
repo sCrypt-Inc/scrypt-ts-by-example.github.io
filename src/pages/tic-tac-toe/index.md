@@ -1,7 +1,7 @@
 ---
 title: Tic-Tac-Toe
 version: 0.1.0
-description: Tic-Tac-Toe in scryptTS
+description: Tic-Tac-Toe in sCrypt
 ---
 
 To initiate a game, Alice and Bob each lock up X amount of bitcoins into a contract UTXO. They take turns to play the game by sending signed transactions interacting with the [stateful contract](https://scrypt.io/scrypt-ts/tutorials/stateful-contract). If one of them wins, the winner claims the 2X bitcoins. If there is a draw, they take back their bitcoins.

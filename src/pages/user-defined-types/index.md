@@ -1,7 +1,7 @@
 ---
 title: User-defined Types
 version: 0.1.0
-description: User-defined types in scryptTS
+description: User-defined types in sCrypt
 ---
 
 Users can be define customized types using `type` or `interface`, made of basic types.

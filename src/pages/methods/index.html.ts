@@ -1,7 +1,7 @@
 // metadata
 export const version = "0.1.0"
 export const title = "Methods"
-export const description = "Methods in scryptTS"
+export const description = "Methods in sCrypt"
 export const replitLink = ""
 
 const html = `<p>A smart contract can have two kinds of methods:</p>

@@ -1,7 +1,7 @@
 ---
 title: Constructor
 version: 0.1.0
-description: Smart contract constructors in scryptTS
+description: Smart contract constructors in sCrypt
 ---
 
 A smart contract must have an explicit constructor if it has at least one `@prop`.

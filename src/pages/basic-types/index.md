@@ -1,7 +1,7 @@
 ---
 title: Basic Types
 version: 0.1.0
-description: Basic types in scryptTS
+description: Basic types in sCrypt
 ---
 
 Basic types allowed to be used in `@prop`s and `@method`s are `boolean` and `bigint`, along with their wrapper types `Boolean` and `BigInt`.

@@ -1,7 +1,7 @@
 ---
 title: Methods
 version: 0.1.0
-description: Methods in scryptTS
+description: Methods in sCrypt
 ---
 
 A smart contract can have two kinds of methods:

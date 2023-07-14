@@ -1,7 +1,7 @@
 ---
 title: Return Statement
 version: 0.1.0
-description: Return statement in scryptTS
+description: Return statement in sCrypt
 ---
 
 Every smart contract method must end with a `return`statement. Additionally it is the only place where we can use it.

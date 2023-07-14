@@ -1,7 +1,7 @@
 ---
 title: Coin Toss
 version: 0.1.0
-description: Coin toss in scryptTS
+description: Coin toss in sCrypt
 ---
 
 Alice and Bob decide to flip a coin, but they have no physical coin or they want to do it over the Internet. They can achieve fair coin tossing by following protocol on Bitcoin.

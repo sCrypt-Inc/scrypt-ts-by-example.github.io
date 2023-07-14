@@ -1,7 +1,7 @@
 // metadata
 export const version = "0.1.0"
 export const title = "User-defined Types"
-export const description = "User-defined types in scryptTS"
+export const description = "User-defined types in sCrypt"
 export const replitLink = ""
 
 const html = `<p>Users can be define customized types using <code>type</code> or <code>interface</code>, made of basic types.</p>

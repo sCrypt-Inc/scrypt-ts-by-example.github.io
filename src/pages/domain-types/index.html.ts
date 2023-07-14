@@ -1,7 +1,7 @@
 // metadata
 export const version = "0.1.0"
 export const title = "Domain Types"
-export const description = "Domain types in scryptTS"
+export const description = "Domain types in sCrypt"
 export const replitLink = ""
 
 const html = `<p>There are several <a href="https://scrypt.io/scrypt-ts/getting-started/how-to-write-a-contract#domain-types">domain types</a>, specific to the Bitcoin context, used to further improve type safety.</p>

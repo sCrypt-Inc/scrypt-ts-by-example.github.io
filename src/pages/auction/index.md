@@ -1,7 +1,7 @@
 ---
 title: Auction
 version: 0.1.0
-description: Auction in scryptTS
+description: Auction in sCrypt
 ---
 
 The auction contract implements two public functions:

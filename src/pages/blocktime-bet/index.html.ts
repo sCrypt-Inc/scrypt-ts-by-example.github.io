@@ -1,7 +1,7 @@
 // metadata
 export const version = "0.1.0"
 export const title = "BlockTime Bet"
-export const description = "BlockTime bet in scryptTS"
+export const description = "BlockTime bet in sCrypt"
 export const replitLink = ""
 
 const html = `<p>By verifying Merkle proofs (read section 8 of the <a href="https://craigwright.net/bitcoin-white-paper.pdf">Bitcoin whitepaper</a>) in a smart contract we can do interesting things such as betting on the time the next block will be mined. In the following smart contract Alice and Bob bet whether it will take more or less than 10 minutes to mine the next block.</p>

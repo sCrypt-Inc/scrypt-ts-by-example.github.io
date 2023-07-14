@@ -1,7 +1,7 @@
 ---
 title: Number Type
 version: 0.1.0
-description: Number type in scryptTS
+description: Number type in sCrypt
 ---
 
 The `number` type is not allowed in `@prop`s and `@method`.

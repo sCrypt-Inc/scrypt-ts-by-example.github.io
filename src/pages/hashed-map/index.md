@@ -1,7 +1,7 @@
 ---
 title: HashedMap
 version: 0.1.0
-description: HashedMap in scryptTS
+description: HashedMap in sCrypt
 ---
 
 The `HashedMap` library provides a map/hashtable-like data structure. Unique keys and their corresponding values are hashed before being stored. Only the hashes of th key and value are stored on-chain.

@@ -1,7 +1,7 @@
 // metadata
 export const version = "0.1.0"
 export const title = "Loops"
-export const description = "Loops in scryptTS"
+export const description = "Loops in sCrypt"
 export const replitLink = ""
 
 const html = `<p>Bitcoin Script does not provide looping constructs natively for security reasons, to prevent DoS attacks. All loops must be bounded at compile time. So if you want to loop inside <code>@method</code>, you must strictly use the following format:</p>

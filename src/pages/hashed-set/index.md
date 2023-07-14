@@ -1,7 +1,7 @@
 ---
 title: HashedSet
 version: 0.1.0
-description: HashedSet in scryptTS
+description: HashedSet in sCrypt
 ---
 
 `HashedSet` can be regarded as a special [`HashedMap`](/hashed-map) where a value is the same as the key and is thus omitted. Again, only the hashes of the keys get stored on-chain.

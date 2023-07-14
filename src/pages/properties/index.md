@@ -1,7 +1,7 @@
 ---
 title: Properties
 version: 0.1.0
-description: Smart contract properties in scryptTS
+description: Smart contract properties in sCrypt
 ---
 
 Mark smart contract properties with the `@prop` decorator to store the value on chain.

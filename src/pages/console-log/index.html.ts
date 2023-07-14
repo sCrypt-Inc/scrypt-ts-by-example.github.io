@@ -1,7 +1,7 @@
 // metadata
 export const version = "0.1.0"
 export const title = "Built-in Functions"
-export const description = "Built-in functions in scryptTS"
+export const description = "Built-in functions in sCrypt"
 export const replitLink = ""
 
 const html = `<p><code>console.log</code> can be used for debugging purposes.</p>

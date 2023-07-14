@@ -1,7 +1,7 @@
 ---
 title: Array Types
 version: 0.1.0
-description: Array types in scryptTS
+description: Array types in sCrypt
 ---
 
 The common array types in TypeScript like `T[]` or `Array<T>` are not allowed to be used in `@prop`s and `@method`s.

@@ -1,7 +1,7 @@
 // metadata
 export const version = "0.1.0"
 export const title = "Basic Types"
-export const description = "Basic types in scryptTS"
+export const description = "Basic types in sCrypt"
 export const replitLink = ""
 
 const html = `<p>Basic types allowed to be used in <code>@prop</code>s and <code>@method</code>s are <code>boolean</code> and <code>bigint</code>, along with their wrapper types <code>Boolean</code> and <code>BigInt</code>.</p>

@@ -1,8 +1,8 @@
 // metadata
 export const version = "0.1.0"
 export const title = "Time Lock"
-export const description = "Time locks in scryptTS"
-export const replitLink = "https://replit.com/@msinkec/scryptTS-cltv?embed=true"
+export const description = "Time locks in sCrypt"
+export const replitLink = "https://replit.com/@msinkec/sCrypt-cltv?embed=true"
 
 const html = `<p>We can write smart contracts that, whose method(s) can only be unlocked after a certain amount of time has passed. We leverage the <a href="https://wiki.bitcoinsv.io/index.php/NLocktime_and_nSequence">nLocktime</a> field of Bitcoin transactions:</p>
 <pre><code class="language-ts"><span class="hljs-keyword">class</span> <span class="hljs-title class_">TimeLock</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">SmartContract</span> {

@@ -1,7 +1,7 @@
 // metadata
 export const version = "0.1.0"
 export const title = "Multi-Sig Payment"
-export const description = "Multi-Sig payment in scryptTS"
+export const description = "Multi-Sig payment in sCrypt"
 export const replitLink = ""
 
 const html = `<p>A multi-sig payment contract is used to send funds to a group of Bitcoin addresses. It employs the checkMultiSig function, which distinguishes itself from the checkSig function by accepting an array of signature-public key pairs rather than just one pair. Each signature must be valid.</p>

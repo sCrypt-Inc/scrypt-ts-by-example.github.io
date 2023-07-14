@@ -1,7 +1,7 @@
 // metadata
 export const version = "0.1.0"
 export const title = "Coin Toss"
-export const description = "Coin toss in scryptTS"
+export const description = "Coin toss in sCrypt"
 export const replitLink = ""
 
 const html = `<p>Alice and Bob decide to flip a coin, but they have no physical coin or they want to do it over the Internet. They can achieve fair coin tossing by following protocol on Bitcoin.</p>

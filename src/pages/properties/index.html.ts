@@ -1,7 +1,7 @@
 // metadata
 export const version = "0.1.0"
 export const title = "Properties"
-export const description = "Smart contract properties in scryptTS"
+export const description = "Smart contract properties in sCrypt"
 export const replitLink = ""
 
 const html = `<p>Mark smart contract properties with the <code>@prop</code> decorator to store the value on chain.</p>

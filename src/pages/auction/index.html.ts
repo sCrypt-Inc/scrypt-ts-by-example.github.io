@@ -1,7 +1,7 @@
 // metadata
 export const version = "0.1.0"
 export const title = "Auction"
-export const description = "Auction in scryptTS"
+export const description = "Auction in sCrypt"
 export const replitLink = ""
 
 const html = `<p>The auction contract implements two public functions:</p>

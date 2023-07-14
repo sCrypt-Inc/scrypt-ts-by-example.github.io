@@ -1,7 +1,7 @@
 // metadata
 export const version = "0.1.0"
 export const title = "ScriptContext"
-export const description = "ScriptContext in scryptTS"
+export const description = "ScriptContext in sCrypt"
 export const replitLink = ""
 
 const html = `<p><code>ScriptContext</code> allows you to put arbitrary constraints on the subsequent (unlocking) transaction (more precisely it&#39;s <a href="https://github.com/bitcoin-sv/bitcoin-sv/blob/master/doc/abc/replay-protected-sighash.md#digest-algorithm">hash preimage</a>). The most common among those is propagating state through a chain of UTXOs.</p>

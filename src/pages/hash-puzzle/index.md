@@ -1,7 +1,7 @@
 ---
 title: Hash Puzzle
 version: 0.1.0
-description: Hash puzzles in scryptTS
+description: Hash puzzles in sCrypt
 ---
 
 A hash puzzle is a smart contract that can be unlocked by providing a hash preimage of predefined hash value.

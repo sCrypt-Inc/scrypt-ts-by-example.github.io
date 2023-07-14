@@ -1,7 +1,7 @@
 // metadata
 export const version = "0.1.0"
 export const title = "Variable Declarations"
-export const description = "Variable declarations in scryptTS"
+export const description = "Variable declarations in sCrypt"
 export const replitLink = ""
 
 const html = `<p>Variables can be declared in <code>@method</code>s by keywords <code>const</code> / <code>var</code> / <code>let</code>, like in normal TypeScript.</p>

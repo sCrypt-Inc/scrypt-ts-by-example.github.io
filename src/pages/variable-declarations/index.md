@@ -1,7 +1,7 @@
 ---
 title: Variable Declarations
 version: 0.1.0
-description: Variable declarations in scryptTS
+description: Variable declarations in sCrypt
 ---
 
 Variables can be declared in `@method`s by keywords `const` / `var` / `let`, like in normal TypeScript.

@@ -1,7 +1,7 @@
 ---
 title: Hello World
 version: 0.1.0
-description: Hello world in scryptTS
+description: Hello world in sCrypt
 ---
 
 The following is a simple smart contract class. It takes an integer `x` as a parameter for the constructor.

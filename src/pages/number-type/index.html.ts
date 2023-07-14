@@ -1,7 +1,7 @@
 // metadata
 export const version = "0.1.0"
 export const title = "Number Type"
-export const description = "Number type in scryptTS"
+export const description = "Number type in sCrypt"
 export const replitLink = ""
 
 const html = `<p>The <code>number</code> type is not allowed in <code>@prop</code>s and <code>@method</code>.</p>

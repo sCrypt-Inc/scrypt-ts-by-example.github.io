@@ -1,7 +1,7 @@
 ---
 title: ECDSA-based Oracles
 version: 0.1.0
-description: ECDSA-base oracles in scryptTS
+description: ECDSA-base oracles in sCrypt
 ---
 
 **P** and **p** denote an oracle’s public and private key, respectively. We first hash the data to be signed. The result is added with **p**, yielding a new private key **p’**.

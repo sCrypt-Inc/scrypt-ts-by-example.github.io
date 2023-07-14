@@ -1,8 +1,8 @@
 // metadata
 export const version = "0.1.0"
 export const title = "P2PKH"
-export const description = "Pay to Public Key Hash (P2PKH) in scryptTS"
-export const replitLink = "https://replit.com/@msinkec/scryptTS-p2pkh?embed=true"
+export const description = "Pay to Public Key Hash (P2PKH) in sCrypt"
+export const replitLink = "https://replit.com/@msinkec/sCrypt-p2pkh?embed=true"
 
 const html = `<p>Pay-to-PubKey-Hash (<a href="https://learnmeabitcoin.com/guide/p2pkh">P2PKH</a>) contract is used to send bitcoins to a bitcoin address. It is the most common contract on the Bitcoin network. Such contracts are unlocked by the public key and a signature created by the corresponding private key.</p>
 <pre><code class="language-ts"><span class="hljs-keyword">class</span> <span class="hljs-title class_">P2PKH</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">SmartContract</span> {

@@ -16,6 +16,7 @@ import component_hash_puzzle from "./pages/hash-puzzle"
 import component_hashed_map from "./pages/hashed-map"
 import component_hashed_set from "./pages/hashed-set"
 import component_hello_world from "./pages/hello-world"
+import component_htlc from "./pages/htlc"
 import component_methods from "./pages/methods"
 import component_multisig from "./pages/multisig"
 import component_number_type from "./pages/number-type"
@@ -120,6 +121,10 @@ const routes: Route[] = [
     {
         path: "/hello-world",
         component: component_hello_world
+    },
+    {
+        path: "/htlc",
+        component: component_htlc
     },
     {
         path: "/methods",

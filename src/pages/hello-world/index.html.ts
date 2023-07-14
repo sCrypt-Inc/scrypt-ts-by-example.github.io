@@ -1,8 +1,8 @@
 // metadata
 export const version = "0.1.0"
 export const title = "Hello World"
-export const description = "Hello world in scryptTS"
-export const replitLink = "https://replit.com/@msinkec/scryptTS-demo?embed=true"
+export const description = "Hello world in sCrypt"
+export const replitLink = "https://replit.com/@msinkec/sCrypt-demo?embed=true"
 
 const html = `<p>The following is a simple smart contract class. It takes an integer <code>x</code> as a parameter for the constructor.
 It exposes a single public method <code>equals</code>, which checks if the passed parameter is equal to <code>x</code>.
