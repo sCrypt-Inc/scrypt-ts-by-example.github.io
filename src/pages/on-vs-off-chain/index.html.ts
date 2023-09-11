@@ -24,7 +24,7 @@ On the other hand, the second is a more complex type, that has many functions fo
 </tr>
 <tr>
 <td><code>bsv.Address</code></td>
-<td><code>PubKeyHash</code> or <code>Ripemd160</code></td>
+<td><code>Addr</code></td>
 </tr>
 <tr>
 <td><code>bsv.crypto.Signature</code></td>

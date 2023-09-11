@@ -9,7 +9,7 @@ const html = `<p>There are several <a href="https://scrypt.io/scrypt-ts/getting-
   <span class="hljs-title function_">toByteString</span>(<span class="hljs-string">"02a2ef6eb12d3076dbdc98241920f75ac88b664656400aa390a0b236ea1eb6ec0b"</span>)
 )
 
-<span class="hljs-keyword">let</span> pkh = <span class="hljs-title class_">PubKeyHash</span>(<span class="hljs-title function_">hash160</span>(pubKey))
+<span class="hljs-keyword">let</span> pkh = <span class="hljs-title class_">Addr</span>(<span class="hljs-title function_">pubKey2Addr</span>(pubKey))
 
 <span class="hljs-keyword">let</span> h = <span class="hljs-title class_">Sha256</span>(<span class="hljs-title function_">sha256</span>(<span class="hljs-title function_">utf8ToByteString</span>(<span class="hljs-string">"hello"</span>)))
 

@@ -10,18 +10,21 @@ A multi-sig payment contract is used to send funds to a group of Bitcoin address
 class MultiSigPayment extends SmartContract {
   // Public key hashes of the 3 recipients
   @prop()
-  readonly pubKeyHashes: FixedArray<PubKeyHash, 3>
+  readonly addresses: FixedArray<Addr, 3>
 
-  constructor(pubKeyHashes: FixedArray<PubKeyHash, 3>) {
+  constructor(addresses: FixedArray<Addr, 3>) {
     super(...arguments)
-    this.pubKeyHashes = pubKeyHashes
+    this.addresses = addresses
   }
 
   @method()
   public unlock(signatures: FixedArray<Sig, 3>, publicKeys: FixedArray<PubKey, 3>) {
     // Check if the passed public keys belong to the specified public key hashes.
     for (let i = 0; i < 3; i++) {
-      assert(hash160(publicKeys[i]) == this.pubKeyHashes[i], "public key hash mismatch")
+      assert(
+        pubKey2Addr(publicKeys[i]) == this.addresses[i],
+        "public key does not correspond to address"
+      )
     }
 
     // Validate signatures.

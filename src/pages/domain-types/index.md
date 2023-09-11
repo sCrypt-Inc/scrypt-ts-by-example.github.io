@@ -11,7 +11,7 @@ let pubKey = PubKey(
   toByteString("02a2ef6eb12d3076dbdc98241920f75ac88b664656400aa390a0b236ea1eb6ec0b")
 )
 
-let pkh = PubKeyHash(hash160(pubKey))
+let pkh = Addr(pubKey2Addr(pubKey))
 
 let h = Sha256(sha256(utf8ToByteString("hello")))
 

@@ -8,14 +8,14 @@ const html = `<p>A smart contract can restrict a payment to be destined to a spe
 <pre><code class="language-ts"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Bet</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">SmartContract</span> {
 
   <span class="hljs-meta">@prop</span>()
-  <span class="hljs-attr">addrAlice</span>: <span class="hljs-title class_">PubKeyHash</span>
+  <span class="hljs-attr">addrAlice</span>: <span class="hljs-title class_">Addr</span>
 
   <span class="hljs-meta">@prop</span>()
-  <span class="hljs-attr">addrBob</span>: <span class="hljs-title class_">PubKeyHash</span>
+  <span class="hljs-attr">addrBob</span>: <span class="hljs-title class_">Addr</span>
 
   <span class="hljs-title function_">constructor</span>(<span class="hljs-params">
-    addrAlice: PubKeyHash,
-    addrBob: PubKeyHash,
+    addrAlice: Addr,
+    addrBob: Addr,
   </span>) {
     <span class="hljs-variable language_">super</span>(...<span class="hljs-variable language_">arguments</span>)
     <span class="hljs-variable language_">this</span>.<span class="hljs-property">addrAlice</span> = addrAlice
@@ -27,7 +27,7 @@ const html = `<p>A smart contract can restrict a payment to be destined to a spe
   <span class="hljs-meta">@method</span>(<span class="hljs-title class_">SigHash</span>.<span class="hljs-property">ANYONECANPAY_SINGLE</span>)
   <span class="hljs-keyword">public</span> <span class="hljs-title function_">unlockAndPay</span>(<span class="hljs-params">...</span>) {
     <span class="hljs-comment">// Implement logic to choose winner...</span>
-    <span class="hljs-keyword">let</span> <span class="hljs-attr">winner</span>: <span class="hljs-title class_">PubKeyHash</span> = ...
+    <span class="hljs-keyword">let</span> <span class="hljs-attr">winner</span>: <span class="hljs-title class_">Addr</span> = ...
 
     <span class="hljs-comment">// Pay the winner, i.e. enforce a P2PKH that pays his address as the next output.</span>
     <span class="hljs-keyword">const</span> amount = <span class="hljs-variable language_">this</span>.<span class="hljs-property">ctx</span>.<span class="hljs-property">utxo</span>.<span class="hljs-property">value</span> <span class="hljs-comment">// Pay out the same amount, that was locked in the smart contract itself.</span>

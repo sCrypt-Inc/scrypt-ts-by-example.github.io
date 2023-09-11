@@ -11,7 +11,7 @@ const html = `<p>The auction contract implements two public functions:</p>
 </ul>
 <pre><code class="language-ts"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Auction</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">SmartContract</span> {
   <span class="hljs-meta">@prop</span>(<span class="hljs-literal">true</span>)
-  <span class="hljs-attr">bidder</span>: <span class="hljs-title class_">PubKeyHash</span>
+  <span class="hljs-attr">bidder</span>: <span class="hljs-title class_">Addr</span>
 
   <span class="hljs-meta">@prop</span>()
   <span class="hljs-attr">auctioner</span>: <span class="hljs-title class_">PubKey</span>
@@ -19,7 +19,7 @@ const html = `<p>The auction contract implements two public functions:</p>
   <span class="hljs-meta">@prop</span>()
   <span class="hljs-attr">auctionDeadline</span>: <span class="hljs-built_in">bigint</span>
 
-  <span class="hljs-title function_">constructor</span>(<span class="hljs-params">bidder: PubKeyHash, auctioner: PubKey, auctionDeadline: <span class="hljs-built_in">bigint</span></span>) {
+  <span class="hljs-title function_">constructor</span>(<span class="hljs-params">bidder: Addr, auctioner: PubKey, auctionDeadline: <span class="hljs-built_in">bigint</span></span>) {
     <span class="hljs-variable language_">super</span>(bidder, auctioner, auctionDeadline)
     <span class="hljs-variable language_">this</span>.<span class="hljs-property">bidder</span> = bidder
     <span class="hljs-variable language_">this</span>.<span class="hljs-property">auctioner</span> = auctioner
@@ -29,7 +29,7 @@ const html = `<p>The auction contract implements two public functions:</p>
   <span class="hljs-comment">// bid with a higher offer</span>
   <span class="hljs-meta">@method</span>()
   <span class="hljs-keyword">public</span> <span class="hljs-title function_">bid</span>(<span class="hljs-params">
-    bidder: PubKeyHash,
+    bidder: Addr,
     bid: <span class="hljs-built_in">bigint</span>,
     changeSats: <span class="hljs-built_in">bigint</span>,
     txPreimage: SigHashPreimage
@@ -37,7 +37,7 @@ const html = `<p>The auction contract implements two public functions:</p>
     <span class="hljs-keyword">let</span> <span class="hljs-attr">highestBid</span>: <span class="hljs-built_in">bigint</span> = <span class="hljs-title class_">SigHash</span>.<span class="hljs-title function_">value</span>(txPreimage)
     <span class="hljs-title function_">assert</span>(bid &gt; highestBid)
 
-    <span class="hljs-keyword">let</span> <span class="hljs-attr">highestBidder</span>: <span class="hljs-title class_">PubKeyHash</span> = <span class="hljs-variable language_">this</span>.<span class="hljs-property">bidder</span>
+    <span class="hljs-keyword">let</span> <span class="hljs-attr">highestBidder</span>: <span class="hljs-title class_">Addr</span> = <span class="hljs-variable language_">this</span>.<span class="hljs-property">bidder</span>
     <span class="hljs-variable language_">this</span>.<span class="hljs-property">bidder</span> = bidder
 
     <span class="hljs-comment">// auction continues with a higher bidder</span>

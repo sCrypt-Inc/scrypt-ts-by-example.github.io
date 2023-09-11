@@ -8,7 +8,7 @@ const html = `<p>Similarly as restricting the outputs to pay a specific address,
 <p>The following contract pays out the address defined in <code>dest</code> and includes an additional <code>OP_RETURN</code> output containing a message.</p>
 <pre><code class="language-ts"><span class="hljs-keyword">class</span> <span class="hljs-title class_">EnforceOpReturn</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">SmartContract</span> {
   <span class="hljs-meta">@prop</span>()
-  <span class="hljs-attr">dest</span>: <span class="hljs-title class_">PubKeyHash</span>
+  <span class="hljs-attr">dest</span>: <span class="hljs-title class_">Addr</span>
 
   <span class="hljs-meta">@prop</span>()
   <span class="hljs-attr">message</span>: <span class="hljs-title class_">ByteString</span>

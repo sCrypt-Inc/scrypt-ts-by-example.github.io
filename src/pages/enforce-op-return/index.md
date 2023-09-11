@@ -11,7 +11,7 @@ The following contract pays out the address defined in `dest` and includes an ad
 ```ts
 class EnforceOpReturn extends SmartContract {
   @prop()
-  dest: PubKeyHash
+  dest: Addr
 
   @prop()
   message: ByteString

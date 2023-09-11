@@ -10,14 +10,14 @@ A smart contract can restrict a payment to be destined to a specific address. Fo
 class Bet extends SmartContract {
 
   @prop()
-  addrAlice: PubKeyHash
+  addrAlice: Addr
 
   @prop()
-  addrBob: PubKeyHash
+  addrBob: Addr
 
   constructor(
-    addrAlice: PubKeyHash,
-    addrBob: PubKeyHash,
+    addrAlice: Addr,
+    addrBob: Addr,
   ) {
     super(...arguments)
     this.addrAlice = addrAlice
@@ -29,7 +29,7 @@ class Bet extends SmartContract {
   @method(SigHash.ANYONECANPAY_SINGLE)
   public unlockAndPay(...) {
     // Implement logic to choose winner...
-    let winner: PubKeyHash = ...
+    let winner: Addr = ...
 
     // Pay the winner, i.e. enforce a P2PKH that pays his address as the next output.
     const amount = this.ctx.utxo.value // Pay out the same amount, that was locked in the smart contract itself.

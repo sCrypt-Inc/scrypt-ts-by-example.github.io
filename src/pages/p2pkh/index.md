@@ -9,17 +9,20 @@ Pay-to-PubKey-Hash ([P2PKH](https://learnmeabitcoin.com/guide/p2pkh)) contract i
 ```ts
 class P2PKH extends SmartContract {
   @prop()
-  readonly pubKeyHash: PubKeyHash
+  readonly address: Addr
 
-  constructor(pubKeyHash: PubKeyHash) {
-    super(pubKeyHash)
-    this.pubKeyHash = pubKeyHash
+  constructor(address: Addr) {
+    super(address)
+    this.address = address
   }
 
   @method()
   public unlock(sig: Sig, pubkey: PubKey) {
-    assert(hash160(pubkey) == this.pubKeyHash, "Wrong pub key")
-    assert(this.checkSig(sig, pubkey), "Bad sig")
+    assert(
+      pubKey2Addr(pubkey) == this.address,
+      "pub key does not correspond to address"
+    )
+    assert(this.checkSig(sig, pubkey), "signature check failed")
   }
 }
 ```

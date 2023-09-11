@@ -12,7 +12,7 @@ The auction contract implements two public functions:
 ```ts
 class Auction extends SmartContract {
   @prop(true)
-  bidder: PubKeyHash
+  bidder: Addr
 
   @prop()
   auctioner: PubKey
@@ -20,7 +20,7 @@ class Auction extends SmartContract {
   @prop()
   auctionDeadline: bigint
 
-  constructor(bidder: PubKeyHash, auctioner: PubKey, auctionDeadline: bigint) {
+  constructor(bidder: Addr, auctioner: PubKey, auctionDeadline: bigint) {
     super(bidder, auctioner, auctionDeadline)
     this.bidder = bidder
     this.auctioner = auctioner
@@ -30,7 +30,7 @@ class Auction extends SmartContract {
   // bid with a higher offer
   @method()
   public bid(
-    bidder: PubKeyHash,
+    bidder: Addr,
     bid: bigint,
     changeSats: bigint,
     txPreimage: SigHashPreimage
@@ -38,7 +38,7 @@ class Auction extends SmartContract {
     let highestBid: bigint = SigHash.value(txPreimage)
     assert(bid > highestBid)
 
-    let highestBidder: PubKeyHash = this.bidder
+    let highestBidder: Addr = this.bidder
     this.bidder = bidder
 
     // auction continues with a higher bidder
