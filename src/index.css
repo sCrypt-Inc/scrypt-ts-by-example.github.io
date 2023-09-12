@@ -277,3 +277,10 @@ body.dark .hljs-property,
 body.dark .hljs-punctuation,
 body.dark .hljs-tag {
 }
+
+
+/* Increase horizontal padding for table cells */
+table td, table th {
+    padding-left: 20px; 
+    padding-right: 20px;
+}
