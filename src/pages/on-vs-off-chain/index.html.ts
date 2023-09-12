@@ -1,7 +1,8 @@
 // metadata
 export const version = "0.1.0"
 export const title = "On-Chain vs Off-Chain Types"
-export const description = "The difference between on-chain and off-chain types in sCrypt"
+export const description =
+  "The difference between on-chain and off-chain types in sCrypt"
 export const replitLink = ""
 
 const html = `<p>It is important to distinguish between on-chain and off-chain types. Off-chain types cannot be used inside a smart contract.</p>

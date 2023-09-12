@@ -1,7 +1,8 @@
 // metadata
 export const version = "0.1.0"
 export const title = "Enforce Recipients"
-export const description = "Build and enforce a P2PKH output via an sCrypt smart contact"
+export const description =
+  "Build and enforce a P2PKH output via an sCrypt smart contact"
 export const replitLink = ""
 
 const html = `<p>A smart contract can restrict a payment to be destined to a specific address. For example, the contract can check some arbitrary condition and based in the result it pays either Alice or Bob:</p>
