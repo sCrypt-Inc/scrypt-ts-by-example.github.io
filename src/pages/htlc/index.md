@@ -11,14 +11,12 @@ These contracts are often used in [cross-chain atomic swaps](https://xiaohuiliu.
 ```ts
 class HashTimeLockContract extends SmartContract {
   @prop() readonly alicePubKey: PubKey
-
   @prop() readonly bobPubKey: PubKey
-
   @prop() readonly hashX: Sha256
-
   @prop() readonly timeout: bigint // Can be a timestamp or block height.
 
-  // hash lock
+  ...
+
   @method()
   public unlock(x: ByteString, aliceSig: Sig) {
     // Check if H(x) == this.hashX
@@ -28,12 +26,10 @@ class HashTimeLockContract extends SmartContract {
     assert(this.checkSig(aliceSig, this.alicePubKey))
   }
 
-  // time lock
   @method()
   public cancel(bobSig: Sig) {
-    assert(this.ctx.locktime >= this.timeout, "locktime has not yet expired")
-
-    // ...
+    // Check time lock.
+    assert(this.timeLock(this.timeout), 'time lock not yet expired')
 
     // Verify Bobs signature.
     assert(this.checkSig(bobSig, this.bobPubKey))

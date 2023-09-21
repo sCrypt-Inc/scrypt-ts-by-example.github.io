@@ -11,65 +11,58 @@ The auction contract implements two public functions:
 
 ```ts
 class Auction extends SmartContract {
+  // The bidder's public key.
   @prop(true)
-  bidder: Addr
+  bidder: PubKey
 
+  // The auctioneer's public key.
   @prop()
-  auctioner: PubKey
+  readonly auctioneer: PubKey
 
+  // Deadline of the auction. Can be block height or timestamp.
   @prop()
-  auctionDeadline: bigint
+  readonly auctionDeadline: bigint
 
-  constructor(bidder: Addr, auctioner: PubKey, auctionDeadline: bigint) {
-    super(bidder, auctioner, auctionDeadline)
-    this.bidder = bidder
-    this.auctioner = auctioner
+  constructor(auctioneer: PubKey, auctionDeadline: bigint) {
+    super(...arguments)
+    this.bidder = auctioneer
+    this.auctioneer = auctioneer
     this.auctionDeadline = auctionDeadline
   }
 
-  // bid with a higher offer
+  // Call this public method to bid with a higher offer.
   @method()
-  public bid(
-    bidder: Addr,
-    bid: bigint,
-    changeSats: bigint,
-    txPreimage: SigHashPreimage
-  ) {
-    let highestBid: bigint = SigHash.value(txPreimage)
-    assert(bid > highestBid)
+  public bid(bidder: PubKey, bid: bigint) {
+    const highestBid: bigint = this.ctx.utxo.value
+    assert(bid > highestBid, "the auction bid is lower than the current highest bid")
 
-    let highestBidder: Addr = this.bidder
+    // Change the public key of the highest bidder.
+    const highestBidder: PubKey = this.bidder
     this.bidder = bidder
 
-    // auction continues with a higher bidder
-    let stateScript: ByteString = this.getStateScript()
-    let auctionOutput: ByteString = Utils.buildOutput(stateScript, bid)
+    // Auction continues with a higher bidder.
+    const auctionOutput: ByteString = this.buildStateOutput(bid)
 
-    // refund previous highest bidder
-    let refundScript: ByteString = Utils.buildPublicKeyHashScript(highestBidder)
-    let refundOutput: ByteString = Utils.buildOutput(refundScript, highestBid)
-    let output: ByteString = auctionOutput + refundOutput
+    // Refund previous highest bidder.
+    const refundOutput: ByteString = Utils.buildPublicKeyHashOutput(
+      pubKey2Addr(highestBidder),
+      highestBid
+    )
+    let outputs: ByteString = auctionOutput + refundOutput
 
-    if (changeSats > 0) {
-      let changeScript: ByteString = Utils.buildPublicKeyHashScript(bidder)
-      let changeOutput: ByteString = Utils.buildOutput(changeScript, changeSats)
-      output += changeOutput
-    }
+    // Add change output.
+    outputs += this.buildChangeOutput()
 
-    assert(this.propagateState(txPreimage, output))
+    assert(hash256(outputs) == this.ctx.hashOutputs, "hashOutputs check failed")
   }
 
+  // Close the auction if deadline is reached.
   @method()
-  public close(sig: Sig, txPreimage: SigHashPreimage) {
-    assert(this.checkPreimage(txPreimage))
-    assert(SigHash.nLocktime(txPreimage) >= this.auctionDeadline)
-    assert(this.checkSig(sig, this.auctioner))
-  }
-
-  @method()
-  propagateState(txPreimage: SigHashPreimage, outputs: string): boolean {
-    assert(this.checkPreimage(txPreimage))
-    return hash256(outputs) == SigHash.hashOutputs(txPreimage)
+  public close(sig: Sig) {
+    // Check auction deadline.
+    assert(this.timeLock(this.auctionDeadline), "deadline not reached")
+    // Check signature of the auctioneer.
+    assert(this.checkSig(sig, this.auctioneer), "signature check failed")
   }
 }
 ```

@@ -9,18 +9,16 @@ We can write smart contracts that, whose method(s) can only be unlocked after a 
 ```ts
 class TimeLock extends SmartContract {
   @prop()
-  matureTime: bigint
+  readonly matureTime: bigint // Can be a timestamp or block height.
 
   constructor(matureTime: bigint) {
-    super(matureTime)
+    super(...arguments)
     this.matureTime = matureTime
   }
 
   @method()
   public unlock() {
-    ...
-
-    assert(this.ctx.locktime >= this.matureTime, "locktime too low")
+    assert(this.timeLock(this.matureTime), "time lock not yet expired")
   }
 }
 ```
