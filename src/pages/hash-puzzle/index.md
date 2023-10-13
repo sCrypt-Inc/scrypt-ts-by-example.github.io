@@ -1,13 +1,13 @@
 ---
-title: Hash Puzzle
+title: Hash Lock
 version: 0.1.0
-description: Hash puzzles in sCrypt
+description: Hash Locks in sCrypt
 ---
 
-A hash puzzle is a smart contract that can be unlocked by providing a hash preimage of predefined hash value.
+A hash lock is a smart contract that can be unlocked by providing a hash preimage of predefined hash value.
 
 ```ts
-class HashPuzzle extends SmartContract {
+class HashLock extends SmartContract {
   @prop()
   sha256: Sha256
 
