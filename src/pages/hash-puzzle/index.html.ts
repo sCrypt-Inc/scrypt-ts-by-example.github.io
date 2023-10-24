@@ -1,10 +1,10 @@
 // metadata
 export const version = "0.1.0"
-export const title = "Hash Puzzle"
-export const description = "Hash puzzles in sCrypt"
+export const title = "Hash Lock"
+export const description = "Hash Locks in sCrypt"
 export const replitLink = "https://replit.com/@msinkec/sCrypt-hashpuzzle?embed=true"
 
-const html = `<p>A hash puzzle is a smart contract that can be unlocked by providing a hash preimage of predefined hash value.</p>
+const html = `<p>A hash lock is a smart contract that can be unlocked by providing a hash preimage of predefined hash value.</p>
 <pre><code class="language-ts"><span class="hljs-keyword">class</span> <span class="hljs-title class_">HashPuzzle</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">SmartContract</span> {
   <span class="hljs-meta">@prop</span>()
   <span class="hljs-attr">sha256</span>: <span class="hljs-title class_">Sha256</span>
