@@ -7,6 +7,8 @@ description: HashedMap in sCrypt
 The `HashedMap` library provides a map/hashtable-like data structure. Unique keys and their corresponding values are hashed before being stored. Only the hashes of th key and value are stored on-chain.
 
 ```ts
+type MyMap = HashedMap<bigint, ByteString>
+
 export class HashedMapDemo extends SmartContract {
   @prop()
   map: MyMap
