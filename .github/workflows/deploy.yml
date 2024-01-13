@@ -14,9 +14,6 @@ jobs:
       with:
         ref: gh-pages
 
-    - name: Switch to master branch
-      run: git checkout master
-
     - name: Install Node.js
       uses: actions/setup-node@v1
       with:
