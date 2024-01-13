@@ -29,6 +29,8 @@ jobs:
       run: npx ts-node --project ./scripts/tsconfig.json scripts/build-routes.ts
 
     - name: Build
+      env:
+        SKIP_PREFLIGHT_CHECK: true
       run: npm run build
 
     - name: Deploy to GitHub Pages
