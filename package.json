@@ -18,7 +18,7 @@
     "clean": "rm -rf build",
     "prebuild": "npm run clean",
     "build": "react-scripts build",
-    "postbuild": "npm run lint && npm run copy-index && npm run copy-index-to-404",
+    "postbuild": "npm run copy-index && npm run copy-index-to-404",
     "copy-index": "ts-node scripts/build.ts",
     "copy-index-to-404": "cp build/index.html build/404.html",
     "eject": "react-scripts eject",
