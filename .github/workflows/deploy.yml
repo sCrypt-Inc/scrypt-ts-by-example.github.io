@@ -1,26 +1,41 @@
-name: Auto Deploy to GitHub Pages
+name: Deploy on gh-pages push
 
 on:
   push:
     branches:
-      - master
+      - gh-pages
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
+    - name: Checkout gh-pages branch
+      uses: actions/checkout@v2
+      with:
+        ref: gh-pages
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '14'
+    - name: Switch to master branch
+      run: git checkout master
 
-      - name: Install Dependencies
-        run: npm install
+    - name: Install Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: '16'
 
-      - name: Build and Deploy
-        run: npm run deploy
+    - name: Install Dependencies
+      run: npm install
 
+    - name: Convert Markdown to React
+      run: find src/pages -type d -not -path "*/__snapshots__" -exec npx ts-node --project ./scripts/tsconfig.json scripts/md-to-react.ts {} \;
+
+    - name: Build Routes
+      run: npx ts-node --project ./scripts/tsconfig.json scripts/build-routes.ts
+
+    - name: Build
+      run: npm run build
+
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@4.1.9
+      with:
+        branch: master   # The branch to deploy to
+        folder: build    # The folder to deploy
