@@ -1,5 +1,5 @@
 ---
-title: Tic-Tac-Toe 5x5
+title: Tic-Tac-Toe5x5
 version: 0.1.0
 description: Tic-Tac-Toe 5x5 in sCrypt
 ---
